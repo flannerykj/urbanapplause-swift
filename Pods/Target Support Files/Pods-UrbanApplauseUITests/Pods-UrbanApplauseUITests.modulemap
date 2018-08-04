@@ -1,0 +1,6 @@
+framework module Pods_UrbanApplauseUITests {
+  umbrella header "Pods-UrbanApplauseUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
