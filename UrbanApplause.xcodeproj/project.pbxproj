@@ -14,6 +14,10 @@
 		955EC597210D410500B21207 /* PostFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955EC596210D410500B21207 /* PostFormViewController.swift */; };
 		955EC599210DF78500B21207 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955EC598210DF78500B21207 /* Session.swift */; };
 		955EC59B210DFED300B21207 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955EC59A210DFED300B21207 /* AuthViewController.swift */; };
+		95A87D9221443BF90034EED3 /* GetPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9121443BF90034EED3 /* GetPosts.swift */; };
+		95A87D9421443CB00034EED3 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9321443CB00034EED3 /* APIClient.swift */; };
+		95A87D9621443D220034EED3 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9521443D220034EED3 /* APIResponse.swift */; };
+		95A87D9821443D460034EED3 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9721443D460034EED3 /* APIError.swift */; };
 		95AA4B8121055FB9008962F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA4B8021055FB9008962F5 /* AppDelegate.swift */; };
 		95AA4B8821055FB9008962F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95AA4B8721055FB9008962F5 /* Assets.xcassets */; };
 		95AA4B8B21055FB9008962F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95AA4B8921055FB9008962F5 /* LaunchScreen.storyboard */; };
@@ -70,6 +74,10 @@
 		955EC596210D410500B21207 /* PostFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFormViewController.swift; sourceTree = "<group>"; };
 		955EC598210DF78500B21207 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		955EC59A210DFED300B21207 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		95A87D9121443BF90034EED3 /* GetPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPosts.swift; sourceTree = "<group>"; };
+		95A87D9321443CB00034EED3 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		95A87D9521443D220034EED3 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		95A87D9721443D460034EED3 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		95AA4B7D21055FB9008962F5 /* UrbanApplause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanApplause.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AA4B8021055FB9008962F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95AA4B8721055FB9008962F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,6 +189,7 @@
 				955EC598210DF78500B21207 /* Session.swift */,
 				95AA4B8021055FB9008962F5 /* AppDelegate.swift */,
 				95F6A32D21443823009098CB /* MarvelAPIClient.swift */,
+				95A87D9321443CB00034EED3 /* APIClient.swift */,
 				95F6A33321443823009098CB /* Models */,
 				95F6A32921443823009098CB /* Requests */,
 				95F6A32E21443823009098CB /* Utils */,
@@ -221,6 +230,7 @@
 				95F6A32A21443823009098CB /* GetComics.swift */,
 				95F6A32B21443823009098CB /* GetCharacters.swift */,
 				95F6A32C21443823009098CB /* GetComic.swift */,
+				95A87D9121443BF90034EED3 /* GetPosts.swift */,
 			);
 			name = Requests;
 			path = ../../MarvelAPI/MarvelAPI.playground/Sources/Requests;
@@ -246,6 +256,8 @@
 				95F6A33521443823009098CB /* Comic.swift */,
 				95F6A33621443823009098CB /* Image.swift */,
 				95F6A33721443823009098CB /* MarvelResponse.swift */,
+				95A87D9521443D220034EED3 /* APIResponse.swift */,
+				95A87D9721443D460034EED3 /* APIError.swift */,
 				95F6A33821443823009098CB /* MarvelError.swift */,
 				95F6A33921443823009098CB /* ComicCharacter.swift */,
 				95F6A33A21443823009098CB /* APIRequest.swift */,
@@ -463,10 +475,12 @@
 				95F6A33D21443823009098CB /* GetComic.swift in Sources */,
 				95F6A34B214438E9009098CB /* Post.swift in Sources */,
 				95F6A34121443823009098CB /* md5.swift in Sources */,
+				95A87D9421443CB00034EED3 /* APIClient.swift in Sources */,
 				95F6A33F21443823009098CB /* HTTPParameter.swift in Sources */,
 				95F6A34021443823009098CB /* Result.swift in Sources */,
 				95F6A33C21443823009098CB /* GetCharacters.swift in Sources */,
 				95F6A34821443823009098CB /* ComicCharacter.swift in Sources */,
+				95A87D9821443D460034EED3 /* APIError.swift in Sources */,
 				95F6A34421443823009098CB /* Comic.swift in Sources */,
 				95F6A33E21443823009098CB /* MarvelAPIClient.swift in Sources */,
 				95F6A34F2144391B009098CB /* AuthForm.swift in Sources */,
@@ -476,9 +490,11 @@
 				95F6A35121443995009098CB /* SwiftyJSON.swift in Sources */,
 				955EC595210CC8D800B21207 /* ImageViewController.swift in Sources */,
 				955EC599210DF78500B21207 /* Session.swift in Sources */,
+				95A87D9221443BF90034EED3 /* GetPosts.swift in Sources */,
 				95F6A34621443823009098CB /* MarvelResponse.swift in Sources */,
 				95F6A34521443823009098CB /* Image.swift in Sources */,
 				95F6A33B21443823009098CB /* GetComics.swift in Sources */,
+				95A87D9621443D220034EED3 /* APIResponse.swift in Sources */,
 				95F6A34221443823009098CB /* URLQueryItemEncoder.swift in Sources */,
 				95AA4B8121055FB9008962F5 /* AppDelegate.swift in Sources */,
 				95AA4BB521056717008962F5 /* PostTableViewCell.swift in Sources */,

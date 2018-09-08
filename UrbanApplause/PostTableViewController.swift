@@ -17,14 +17,14 @@ class PostTableViewController: UITableViewController {
 
         let apiClient = Session.shared.apiClient
         // A simple request with no parameters
-        apiClient.send(GetCharacters()) { response in
-            print("\nGetCharacters finished:")
+        apiClient.send(GetPosts()) { response in
+            print("\nGetPosts finished:")
             
             switch response {
             case .success(let dataContainer):
-                for character in dataContainer.results {
-                    print("  Title: \(character.name ?? "Unnamed character")")
-                    print("  Thumbnail: \(character.thumbnail?.url.absoluteString ?? "None")")
+                for post in dataContainer.results {
+                    print("  Artist: \(post.artist ?? "Unnamed character")")
+                    print("  ImageUrl: \(post.imageUrl?.absoluteString ?? "None")")
                 }
             case .failure(let error):
                 print(error)
