@@ -26,20 +26,12 @@
 		95AA4BAF2105600E008962F5 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA4BAE2105600E008962F5 /* PostTableViewController.swift */; };
 		95AA4BB521056717008962F5 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA4BB421056717008962F5 /* PostTableViewCell.swift */; };
 		95F2B9A4210BD81300B9D5B9 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F2B9A3210BD81300B9D5B9 /* PostDetailViewController.swift */; };
-		95F6A33B21443823009098CB /* GetComics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A32A21443823009098CB /* GetComics.swift */; };
-		95F6A33C21443823009098CB /* GetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A32B21443823009098CB /* GetCharacters.swift */; };
-		95F6A33D21443823009098CB /* GetComic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A32C21443823009098CB /* GetComic.swift */; };
-		95F6A33E21443823009098CB /* MarvelAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A32D21443823009098CB /* MarvelAPIClient.swift */; };
 		95F6A33F21443823009098CB /* HTTPParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A32F21443823009098CB /* HTTPParameter.swift */; };
 		95F6A34021443823009098CB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33021443823009098CB /* Result.swift */; };
 		95F6A34121443823009098CB /* md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33121443823009098CB /* md5.swift */; };
 		95F6A34221443823009098CB /* URLQueryItemEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33221443823009098CB /* URLQueryItemEncoder.swift */; };
 		95F6A34321443823009098CB /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33421443823009098CB /* DataContainer.swift */; };
-		95F6A34421443823009098CB /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33521443823009098CB /* Comic.swift */; };
 		95F6A34521443823009098CB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33621443823009098CB /* Image.swift */; };
-		95F6A34621443823009098CB /* MarvelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33721443823009098CB /* MarvelResponse.swift */; };
-		95F6A34721443823009098CB /* MarvelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33821443823009098CB /* MarvelError.swift */; };
-		95F6A34821443823009098CB /* ComicCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33921443823009098CB /* ComicCharacter.swift */; };
 		95F6A34921443823009098CB /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33A21443823009098CB /* APIRequest.swift */; };
 		95F6A34B214438E9009098CB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A34A214438E9009098CB /* Post.swift */; };
 		95F6A34D21443902009098CB /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A34C21443902009098CB /* Artist.swift */; };
@@ -92,20 +84,12 @@
 		95AA4BAE2105600E008962F5 /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		95AA4BB421056717008962F5 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		95F2B9A3210BD81300B9D5B9 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
-		95F6A32A21443823009098CB /* GetComics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetComics.swift; sourceTree = "<group>"; };
-		95F6A32B21443823009098CB /* GetCharacters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCharacters.swift; sourceTree = "<group>"; };
-		95F6A32C21443823009098CB /* GetComic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetComic.swift; sourceTree = "<group>"; };
-		95F6A32D21443823009098CB /* MarvelAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelAPIClient.swift; sourceTree = "<group>"; };
 		95F6A32F21443823009098CB /* HTTPParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPParameter.swift; sourceTree = "<group>"; };
 		95F6A33021443823009098CB /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		95F6A33121443823009098CB /* md5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = md5.swift; sourceTree = "<group>"; };
 		95F6A33221443823009098CB /* URLQueryItemEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLQueryItemEncoder.swift; sourceTree = "<group>"; };
 		95F6A33421443823009098CB /* DataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
-		95F6A33521443823009098CB /* Comic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		95F6A33621443823009098CB /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		95F6A33721443823009098CB /* MarvelResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelResponse.swift; sourceTree = "<group>"; };
-		95F6A33821443823009098CB /* MarvelError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelError.swift; sourceTree = "<group>"; };
-		95F6A33921443823009098CB /* ComicCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicCharacter.swift; sourceTree = "<group>"; };
 		95F6A33A21443823009098CB /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		95F6A34A214438E9009098CB /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		95F6A34C21443902009098CB /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -188,7 +172,6 @@
 				955EC592210CBDE700B21207 /* Main.storyboard */,
 				955EC598210DF78500B21207 /* Session.swift */,
 				95AA4B8021055FB9008962F5 /* AppDelegate.swift */,
-				95F6A32D21443823009098CB /* MarvelAPIClient.swift */,
 				95A87D9321443CB00034EED3 /* APIClient.swift */,
 				95F6A33321443823009098CB /* Models */,
 				95F6A32921443823009098CB /* Requests */,
@@ -227,9 +210,6 @@
 		95F6A32921443823009098CB /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				95F6A32A21443823009098CB /* GetComics.swift */,
-				95F6A32B21443823009098CB /* GetCharacters.swift */,
-				95F6A32C21443823009098CB /* GetComic.swift */,
 				95A87D9121443BF90034EED3 /* GetPosts.swift */,
 			);
 			name = Requests;
@@ -253,13 +233,9 @@
 			isa = PBXGroup;
 			children = (
 				95F6A33421443823009098CB /* DataContainer.swift */,
-				95F6A33521443823009098CB /* Comic.swift */,
 				95F6A33621443823009098CB /* Image.swift */,
-				95F6A33721443823009098CB /* MarvelResponse.swift */,
 				95A87D9521443D220034EED3 /* APIResponse.swift */,
 				95A87D9721443D460034EED3 /* APIError.swift */,
-				95F6A33821443823009098CB /* MarvelError.swift */,
-				95F6A33921443823009098CB /* ComicCharacter.swift */,
 				95F6A33A21443823009098CB /* APIRequest.swift */,
 				95F6A34A214438E9009098CB /* Post.swift */,
 				95F6A34C21443902009098CB /* Artist.swift */,
@@ -472,17 +448,12 @@
 			files = (
 				955EC597210D410500B21207 /* PostFormViewController.swift in Sources */,
 				955EC59B210DFED300B21207 /* AuthViewController.swift in Sources */,
-				95F6A33D21443823009098CB /* GetComic.swift in Sources */,
 				95F6A34B214438E9009098CB /* Post.swift in Sources */,
 				95F6A34121443823009098CB /* md5.swift in Sources */,
 				95A87D9421443CB00034EED3 /* APIClient.swift in Sources */,
 				95F6A33F21443823009098CB /* HTTPParameter.swift in Sources */,
 				95F6A34021443823009098CB /* Result.swift in Sources */,
-				95F6A33C21443823009098CB /* GetCharacters.swift in Sources */,
-				95F6A34821443823009098CB /* ComicCharacter.swift in Sources */,
 				95A87D9821443D460034EED3 /* APIError.swift in Sources */,
-				95F6A34421443823009098CB /* Comic.swift in Sources */,
-				95F6A33E21443823009098CB /* MarvelAPIClient.swift in Sources */,
 				95F6A34F2144391B009098CB /* AuthForm.swift in Sources */,
 				95F6A34921443823009098CB /* APIRequest.swift in Sources */,
 				95F6A34321443823009098CB /* DataContainer.swift in Sources */,
@@ -491,16 +462,13 @@
 				955EC595210CC8D800B21207 /* ImageViewController.swift in Sources */,
 				955EC599210DF78500B21207 /* Session.swift in Sources */,
 				95A87D9221443BF90034EED3 /* GetPosts.swift in Sources */,
-				95F6A34621443823009098CB /* MarvelResponse.swift in Sources */,
 				95F6A34521443823009098CB /* Image.swift in Sources */,
-				95F6A33B21443823009098CB /* GetComics.swift in Sources */,
 				95A87D9621443D220034EED3 /* APIResponse.swift in Sources */,
 				95F6A34221443823009098CB /* URLQueryItemEncoder.swift in Sources */,
 				95AA4B8121055FB9008962F5 /* AppDelegate.swift in Sources */,
 				95AA4BB521056717008962F5 /* PostTableViewCell.swift in Sources */,
 				95AA4BAF2105600E008962F5 /* PostTableViewController.swift in Sources */,
 				95F6A34D21443902009098CB /* Artist.swift in Sources */,
-				95F6A34721443823009098CB /* MarvelError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
