@@ -17,15 +17,14 @@ class PostTableViewController: UITableViewController {
 
         let apiClient = Session.shared.apiClient
         // A simple request with no parameters
-        apiClient.send(GetPosts()) { response in
-            print("\nGetPosts completed")
+        apiClient.send(GetCharacters()) { response in
+            print("\nGetCharacters finished:")
+            
             switch response {
             case .success(let dataContainer):
-                for post in dataContainer.results {
-                    self.posts.append(post)
-                }
-                DispatchQueue.main.async() {
-                    self.tableView.reloadData()
+                for character in dataContainer.results {
+                    print("  Title: \(character.name ?? "Unnamed character")")
+                    print("  Thumbnail: \(character.thumbnail?.url.absoluteString ?? "None")")
                 }
             case .failure(let error):
                 print(error)
@@ -33,11 +32,11 @@ class PostTableViewController: UITableViewController {
         }
         
       
-        if Session.shared.authenticated() {
+        /* if Session.shared.authenticated() {
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPost))
         } else {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign In", style: .plain, target: self, action: #selector(showAuthModal))
-        }
+        } */ 
     }
     @objc func addNewPost() {
         

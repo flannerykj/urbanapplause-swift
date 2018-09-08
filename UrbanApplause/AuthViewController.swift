@@ -13,30 +13,6 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBAction func submit(_ sender: UIButton) {
-        let apiClient = Session.shared.apiClient
-        if let email = emailField.text {
-            if let pwd = passwordField.text {
-                let data = AuthForm(email: email, password: pwd)
-            } else {
-                print("please enter a password")
-                return
-            }
-        } else {
-            print("Please enter an email address")
-            return
-        }
-        apiClient.send(LogIn()) { response in
-            switch response {
-            case .success(let dataContainer):
-                
-                DispatchQueue.main.async() {
-                    print("success")
-                    print(dataContainer.results)
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

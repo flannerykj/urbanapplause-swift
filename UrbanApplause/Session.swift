@@ -18,8 +18,8 @@ class Session {
     private var token: String?
     private var tokenExpiry: Date?
     
-    public var apiClient = APIClient(publicKey: "e3e6b01b06deb446217191f5eb893495"
-, privateKey: "e5ec5ea4c2da374b77048a093098f301a273bd71")
+    let apiClient = MarvelAPIClient(publicKey: "e3e6b01b06deb446217191f5eb893495",
+                                    privateKey: "e5ec5ea4c2da374b77048a093098f301a273bd71")
     
     private init() {
     }
