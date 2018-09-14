@@ -15,28 +15,37 @@ class PostTableViewController: UITableViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
 
+        loadData {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+        if Session.shared.authenticated() {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPost))
+        } else {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign In", style: .plain, target: self, action: #selector(showAuthModal))
+        } 
+    }
+    func loadData(onCompletion:@escaping ()->()) {
         let apiClient = Session.shared.apiClient
         // A simple request with no parameters
+        
         apiClient.send(GetPosts()) { response in
             print("\nGetPosts finished:")
             
             switch response {
             case .success(let dataContainer):
                 for post in dataContainer.results {
+                    self.posts.append(post)
                     print("  Artist: \(post.artist ?? "Unnamed character")")
                     print("  ImageUrl: \(post.imageUrl?.absoluteString ?? "None")")
                 }
+            onCompletion()
             case .failure(let error):
                 print(error)
             }
         }
-        
-      
-        /* if Session.shared.authenticated() {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPost))
-        } else {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign In", style: .plain, target: self, action: #selector(showAuthModal))
-        } */ 
     }
     @objc func addNewPost() {
         

@@ -18,6 +18,9 @@
 		95A87D9421443CB00034EED3 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9321443CB00034EED3 /* APIClient.swift */; };
 		95A87D9621443D220034EED3 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9521443D220034EED3 /* APIResponse.swift */; };
 		95A87D9821443D460034EED3 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9721443D460034EED3 /* APIError.swift */; };
+		95A87D9A214443F10034EED3 /* GetArtists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D99214443F10034EED3 /* GetArtists.swift */; };
+		95A87D9C2144A0D00034EED3 /* GetToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9B2144A0D00034EED3 /* GetToken.swift */; };
+		95A87DA0214502F50034EED3 /* AuthAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9F214502F50034EED3 /* AuthAPIClient.swift */; };
 		95AA4B8121055FB9008962F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA4B8021055FB9008962F5 /* AppDelegate.swift */; };
 		95AA4B8821055FB9008962F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95AA4B8721055FB9008962F5 /* Assets.xcassets */; };
 		95AA4B8B21055FB9008962F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95AA4B8921055FB9008962F5 /* LaunchScreen.storyboard */; };
@@ -35,7 +38,6 @@
 		95F6A34921443823009098CB /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33A21443823009098CB /* APIRequest.swift */; };
 		95F6A34B214438E9009098CB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A34A214438E9009098CB /* Post.swift */; };
 		95F6A34D21443902009098CB /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A34C21443902009098CB /* Artist.swift */; };
-		95F6A34F2144391B009098CB /* AuthForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A34E2144391B009098CB /* AuthForm.swift */; };
 		95F6A35121443995009098CB /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A35021443994009098CB /* SwiftyJSON.swift */; };
 		CB023D55EE4C62B5FC46F746 /* Pods_UrbanApplauseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A259BA5640572DC9E4530817 /* Pods_UrbanApplauseUITests.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,9 @@
 		95A87D9321443CB00034EED3 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		95A87D9521443D220034EED3 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		95A87D9721443D460034EED3 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		95A87D99214443F10034EED3 /* GetArtists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArtists.swift; sourceTree = "<group>"; };
+		95A87D9B2144A0D00034EED3 /* GetToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetToken.swift; sourceTree = "<group>"; };
+		95A87D9F214502F50034EED3 /* AuthAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPIClient.swift; sourceTree = "<group>"; };
 		95AA4B7D21055FB9008962F5 /* UrbanApplause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanApplause.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AA4B8021055FB9008962F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95AA4B8721055FB9008962F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,7 +98,6 @@
 		95F6A33A21443823009098CB /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		95F6A34A214438E9009098CB /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		95F6A34C21443902009098CB /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
-		95F6A34E2144391B009098CB /* AuthForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthForm.swift; sourceTree = "<group>"; };
 		95F6A35021443994009098CB /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		A259BA5640572DC9E4530817 /* Pods_UrbanApplauseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UrbanApplauseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54024B66C7DD4BE11DF0A75 /* Pods-UrbanApplauseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UrbanApplauseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UrbanApplauseTests/Pods-UrbanApplauseTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				955EC598210DF78500B21207 /* Session.swift */,
 				95AA4B8021055FB9008962F5 /* AppDelegate.swift */,
 				95A87D9321443CB00034EED3 /* APIClient.swift */,
+				95A87D9F214502F50034EED3 /* AuthAPIClient.swift */,
 				95F6A33321443823009098CB /* Models */,
 				95F6A32921443823009098CB /* Requests */,
 				95F6A32E21443823009098CB /* Utils */,
@@ -211,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				95A87D9121443BF90034EED3 /* GetPosts.swift */,
+				95A87D99214443F10034EED3 /* GetArtists.swift */,
+				95A87D9B2144A0D00034EED3 /* GetToken.swift */,
 			);
 			name = Requests;
 			path = ../../MarvelAPI/MarvelAPI.playground/Sources/Requests;
@@ -239,7 +246,6 @@
 				95F6A33A21443823009098CB /* APIRequest.swift */,
 				95F6A34A214438E9009098CB /* Post.swift */,
 				95F6A34C21443902009098CB /* Artist.swift */,
-				95F6A34E2144391B009098CB /* AuthForm.swift */,
 			);
 			name = Models;
 			path = ../../MarvelAPI/MarvelAPI.playground/Sources/Models;
@@ -447,14 +453,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				955EC597210D410500B21207 /* PostFormViewController.swift in Sources */,
+				95A87D9C2144A0D00034EED3 /* GetToken.swift in Sources */,
 				955EC59B210DFED300B21207 /* AuthViewController.swift in Sources */,
 				95F6A34B214438E9009098CB /* Post.swift in Sources */,
 				95F6A34121443823009098CB /* md5.swift in Sources */,
 				95A87D9421443CB00034EED3 /* APIClient.swift in Sources */,
+				95A87D9A214443F10034EED3 /* GetArtists.swift in Sources */,
 				95F6A33F21443823009098CB /* HTTPParameter.swift in Sources */,
 				95F6A34021443823009098CB /* Result.swift in Sources */,
 				95A87D9821443D460034EED3 /* APIError.swift in Sources */,
-				95F6A34F2144391B009098CB /* AuthForm.swift in Sources */,
 				95F6A34921443823009098CB /* APIRequest.swift in Sources */,
 				95F6A34321443823009098CB /* DataContainer.swift in Sources */,
 				95F2B9A4210BD81300B9D5B9 /* PostDetailViewController.swift in Sources */,
@@ -464,6 +471,7 @@
 				95A87D9221443BF90034EED3 /* GetPosts.swift in Sources */,
 				95F6A34521443823009098CB /* Image.swift in Sources */,
 				95A87D9621443D220034EED3 /* APIResponse.swift in Sources */,
+				95A87DA0214502F50034EED3 /* AuthAPIClient.swift in Sources */,
 				95F6A34221443823009098CB /* URLQueryItemEncoder.swift in Sources */,
 				95AA4B8121055FB9008962F5 /* AppDelegate.swift in Sources */,
 				95AA4BB521056717008962F5 /* PostTableViewCell.swift in Sources */,
