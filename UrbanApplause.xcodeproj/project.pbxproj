@@ -15,12 +15,10 @@
 		955EC599210DF78500B21207 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955EC598210DF78500B21207 /* Session.swift */; };
 		955EC59B210DFED300B21207 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955EC59A210DFED300B21207 /* AuthViewController.swift */; };
 		95A87D9221443BF90034EED3 /* GetPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9121443BF90034EED3 /* GetPosts.swift */; };
-		95A87D9421443CB00034EED3 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9321443CB00034EED3 /* APIClient.swift */; };
 		95A87D9621443D220034EED3 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9521443D220034EED3 /* APIResponse.swift */; };
 		95A87D9821443D460034EED3 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9721443D460034EED3 /* APIError.swift */; };
 		95A87D9A214443F10034EED3 /* GetArtists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D99214443F10034EED3 /* GetArtists.swift */; };
 		95A87D9C2144A0D00034EED3 /* GetToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9B2144A0D00034EED3 /* GetToken.swift */; };
-		95A87DA0214502F50034EED3 /* AuthAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9F214502F50034EED3 /* AuthAPIClient.swift */; };
 		95AA4B8121055FB9008962F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA4B8021055FB9008962F5 /* AppDelegate.swift */; };
 		95AA4B8821055FB9008962F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95AA4B8721055FB9008962F5 /* Assets.xcassets */; };
 		95AA4B8B21055FB9008962F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95AA4B8921055FB9008962F5 /* LaunchScreen.storyboard */; };
@@ -28,6 +26,11 @@
 		95AA4BA121055FBA008962F5 /* UrbanApplauseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA4BA021055FBA008962F5 /* UrbanApplauseUITests.swift */; };
 		95AA4BAF2105600E008962F5 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA4BAE2105600E008962F5 /* PostTableViewController.swift */; };
 		95AA4BB521056717008962F5 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA4BB421056717008962F5 /* PostTableViewCell.swift */; };
+		95D102BF214C6AA00093177C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D102BE214C6AA00093177C /* Constants.swift */; };
+		95D102C4214C6BA70093177C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D102C3214C6BA70093177C /* APIClient.swift */; };
+		95D102C6214C6BB00093177C /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D102C5214C6BB00093177C /* APIRouter.swift */; };
+		95D102C8214C6C1F0093177C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D102C7214C6C1F0093177C /* User.swift */; };
+		95D102CA214C6D120093177C /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D102C9214C6D120093177C /* DateFormatter.swift */; };
 		95F2B9A4210BD81300B9D5B9 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F2B9A3210BD81300B9D5B9 /* PostDetailViewController.swift */; };
 		95F6A33F21443823009098CB /* HTTPParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A32F21443823009098CB /* HTTPParameter.swift */; };
 		95F6A34021443823009098CB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33021443823009098CB /* Result.swift */; };
@@ -69,12 +72,10 @@
 		955EC598210DF78500B21207 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		955EC59A210DFED300B21207 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		95A87D9121443BF90034EED3 /* GetPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPosts.swift; sourceTree = "<group>"; };
-		95A87D9321443CB00034EED3 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		95A87D9521443D220034EED3 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		95A87D9721443D460034EED3 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		95A87D99214443F10034EED3 /* GetArtists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArtists.swift; sourceTree = "<group>"; };
 		95A87D9B2144A0D00034EED3 /* GetToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetToken.swift; sourceTree = "<group>"; };
-		95A87D9F214502F50034EED3 /* AuthAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPIClient.swift; sourceTree = "<group>"; };
 		95AA4B7D21055FB9008962F5 /* UrbanApplause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanApplause.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AA4B8021055FB9008962F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95AA4B8721055FB9008962F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +89,11 @@
 		95AA4BA221055FBA008962F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95AA4BAE2105600E008962F5 /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		95AA4BB421056717008962F5 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		95D102BE214C6AA00093177C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		95D102C3214C6BA70093177C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		95D102C5214C6BB00093177C /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		95D102C7214C6C1F0093177C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		95D102C9214C6D120093177C /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		95F2B9A3210BD81300B9D5B9 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		95F6A32F21443823009098CB /* HTTPParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPParameter.swift; sourceTree = "<group>"; };
 		95F6A33021443823009098CB /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -174,10 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				955EC592210CBDE700B21207 /* Main.storyboard */,
-				955EC598210DF78500B21207 /* Session.swift */,
 				95AA4B8021055FB9008962F5 /* AppDelegate.swift */,
-				95A87D9321443CB00034EED3 /* APIClient.swift */,
-				95A87D9F214502F50034EED3 /* AuthAPIClient.swift */,
+				95D102C2214C6B8A0093177C /* APIClient */,
+				95D102BE214C6AA00093177C /* Constants.swift */,
 				95F6A33321443823009098CB /* Models */,
 				95F6A32921443823009098CB /* Requests */,
 				95F6A32E21443823009098CB /* Utils */,
@@ -210,6 +215,16 @@
 				95AA4BA221055FBA008962F5 /* Info.plist */,
 			);
 			path = UrbanApplauseUITests;
+			sourceTree = "<group>";
+		};
+		95D102C2214C6B8A0093177C /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				955EC598210DF78500B21207 /* Session.swift */,
+				95D102C3214C6BA70093177C /* APIClient.swift */,
+				95D102C5214C6BB00093177C /* APIRouter.swift */,
+			);
+			path = APIClient;
 			sourceTree = "<group>";
 		};
 		95F6A32921443823009098CB /* Requests */ = {
@@ -246,6 +261,8 @@
 				95F6A33A21443823009098CB /* APIRequest.swift */,
 				95F6A34A214438E9009098CB /* Post.swift */,
 				95F6A34C21443902009098CB /* Artist.swift */,
+				95D102C7214C6C1F0093177C /* User.swift */,
+				95D102C9214C6D120093177C /* DateFormatter.swift */,
 			);
 			name = Models;
 			path = ../../MarvelAPI/MarvelAPI.playground/Sources/Models;
@@ -272,6 +289,7 @@
 				95AA4B7921055FB9008962F5 /* Sources */,
 				95AA4B7A21055FB9008962F5 /* Frameworks */,
 				95AA4B7B21055FB9008962F5 /* Resources */,
+				DA09A181595809C43A6F72F6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -445,6 +463,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DA09A181595809C43A6F72F6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UrbanApplause/Pods-UrbanApplause-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UrbanApplause/Pods-UrbanApplause-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -455,25 +491,28 @@
 				955EC597210D410500B21207 /* PostFormViewController.swift in Sources */,
 				95A87D9C2144A0D00034EED3 /* GetToken.swift in Sources */,
 				955EC59B210DFED300B21207 /* AuthViewController.swift in Sources */,
+				95D102C6214C6BB00093177C /* APIRouter.swift in Sources */,
 				95F6A34B214438E9009098CB /* Post.swift in Sources */,
+				95D102C8214C6C1F0093177C /* User.swift in Sources */,
 				95F6A34121443823009098CB /* md5.swift in Sources */,
-				95A87D9421443CB00034EED3 /* APIClient.swift in Sources */,
 				95A87D9A214443F10034EED3 /* GetArtists.swift in Sources */,
+				95D102BF214C6AA00093177C /* Constants.swift in Sources */,
 				95F6A33F21443823009098CB /* HTTPParameter.swift in Sources */,
 				95F6A34021443823009098CB /* Result.swift in Sources */,
 				95A87D9821443D460034EED3 /* APIError.swift in Sources */,
 				95F6A34921443823009098CB /* APIRequest.swift in Sources */,
 				95F6A34321443823009098CB /* DataContainer.swift in Sources */,
 				95F2B9A4210BD81300B9D5B9 /* PostDetailViewController.swift in Sources */,
+				95D102C4214C6BA70093177C /* APIClient.swift in Sources */,
 				95F6A35121443995009098CB /* SwiftyJSON.swift in Sources */,
 				955EC595210CC8D800B21207 /* ImageViewController.swift in Sources */,
 				955EC599210DF78500B21207 /* Session.swift in Sources */,
 				95A87D9221443BF90034EED3 /* GetPosts.swift in Sources */,
 				95F6A34521443823009098CB /* Image.swift in Sources */,
 				95A87D9621443D220034EED3 /* APIResponse.swift in Sources */,
-				95A87DA0214502F50034EED3 /* AuthAPIClient.swift in Sources */,
 				95F6A34221443823009098CB /* URLQueryItemEncoder.swift in Sources */,
 				95AA4B8121055FB9008962F5 /* AppDelegate.swift in Sources */,
+				95D102CA214C6D120093177C /* DateFormatter.swift in Sources */,
 				95AA4BB521056717008962F5 /* PostTableViewCell.swift in Sources */,
 				95AA4BAF2105600E008962F5 /* PostTableViewController.swift in Sources */,
 				95F6A34D21443902009098CB /* Artist.swift in Sources */,

@@ -6,6 +6,7 @@ target 'UrbanApplause' do
   use_frameworks!
 
   # Pods for UrbanApplause
+  pod 'Alamofire', '~> 4.7'
 
   target 'UrbanApplauseTests' do
     inherit! :search_paths

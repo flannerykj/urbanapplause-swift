@@ -14,39 +14,37 @@ class PostTableViewController: UITableViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-
-        loadData {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+        APIClient.getPosts() { data in
+            let dateFormatter = DateFormatter()
+            dateFormatter.calendar = Calendar(identifier: .iso8601)
+            dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(dateFormatter)
+            do {
+                let apiResponse: APIResponse<DataContainer<Array<Post>>> = try decoder.decode(APIResponse<DataContainer<Array<Post>>>.self, from: data)
+                if let posts = apiResponse.data?.results {
+                    self.posts = posts
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            } catch {
+                print("error trying to decode response")
+                print(error)
+                
             }
+            
         }
         
-        if Session.shared.authenticated() {
+        if APIClient.authenticated() {
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPost))
         } else {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign In", style: .plain, target: self, action: #selector(showAuthModal))
         } 
     }
-    func loadData(onCompletion:@escaping ()->()) {
-        let apiClient = Session.shared.apiClient
-        // A simple request with no parameters
-        
-        apiClient.send(GetPosts()) { response in
-            print("\nGetPosts finished:")
-            
-            switch response {
-            case .success(let dataContainer):
-                for post in dataContainer.results {
-                    self.posts.append(post)
-                    print("  Artist: \(post.artist ?? "Unnamed character")")
-                    print("  ImageUrl: \(post.imageUrl?.absoluteString ?? "None")")
-                }
-            onCompletion()
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
+
     @objc func addNewPost() {
         
     }

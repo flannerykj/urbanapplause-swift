@@ -7,30 +7,35 @@
 //
 
 import UIKit
+import Alamofire
 
 class AuthViewController: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBAction func submit(_ sender: UIButton) {
-        let apiClient = Session.shared.apiClient
+
         // A simple request with no parameters
         if let password = passwordField.text {
             if let email = emailField.text {
-                apiClient.send(GetToken(email: email, password: password)) { response in
-                    print("\nGetToken finished:")
-                    
-                    switch response {
-                    case .success(let dataContainer):
-                        print(JSON(dataContainer
-                        ))
-                        // onCompletion()
-                    case .failure(let error):
-                        print(error)
+                APIClient.login(email: email, password: password) { data in
+                    let decoder = JSONDecoder()
+                    do {
+                        let apiResponse = try decoder.decode(APIResponse<AuthContainer>.self, from: data)
+                        if let token = apiResponse.data?.token {
+                            print("TOKEN: \(token)")
+                        } else {
+                            print(apiResponse)
+                        }
+                    } catch {
+                        print("unable to decode response")
                     }
                 }
             }
         }
+        
+    }
+    func loginSuccess(result: DataResponse<DataContainer<Post>>) {
         
     }
     override func viewDidLoad() {
