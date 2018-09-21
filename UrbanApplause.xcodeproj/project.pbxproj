@@ -9,16 +9,14 @@
 /* Begin PBXBuildFile section */
 		0E4F86B29246A5ECFA9713F7 /* Pods_UrbanApplause.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68BAC5981306F8C22D9AAC8 /* Pods_UrbanApplause.framework */; };
 		69778D31B4B4F414802083CC /* Pods_UrbanApplauseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77C9E60E57592BD2EA59A4B /* Pods_UrbanApplauseTests.framework */; };
+		9537B9EE2151E45B00CD92EE /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537B9ED2151E45B00CD92EE /* APISession.swift */; };
+		9559AF3A2150924C0043302F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9559AF392150924C0043302F /* ProfileViewController.swift */; };
+		9559AF3C215095020043302F /* SelectPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9559AF3B215095020043302F /* SelectPhotoViewController.swift */; };
+		9559AF402150F29B0043302F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9559AF3F2150F29B0043302F /* RootViewController.swift */; };
 		955EC593210CBDE700B21207 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955EC592210CBDE700B21207 /* Main.storyboard */; };
 		955EC595210CC8D800B21207 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955EC594210CC8D800B21207 /* ImageViewController.swift */; };
 		955EC597210D410500B21207 /* PostFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955EC596210D410500B21207 /* PostFormViewController.swift */; };
-		955EC599210DF78500B21207 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955EC598210DF78500B21207 /* Session.swift */; };
-		955EC59B210DFED300B21207 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955EC59A210DFED300B21207 /* AuthViewController.swift */; };
-		95A87D9221443BF90034EED3 /* GetPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9121443BF90034EED3 /* GetPosts.swift */; };
-		95A87D9621443D220034EED3 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9521443D220034EED3 /* APIResponse.swift */; };
-		95A87D9821443D460034EED3 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9721443D460034EED3 /* APIError.swift */; };
-		95A87D9A214443F10034EED3 /* GetArtists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D99214443F10034EED3 /* GetArtists.swift */; };
-		95A87D9C2144A0D00034EED3 /* GetToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A87D9B2144A0D00034EED3 /* GetToken.swift */; };
+		955EC59B210DFED300B21207 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955EC59A210DFED300B21207 /* SignupViewController.swift */; };
 		95AA4B8121055FB9008962F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA4B8021055FB9008962F5 /* AppDelegate.swift */; };
 		95AA4B8821055FB9008962F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95AA4B8721055FB9008962F5 /* Assets.xcassets */; };
 		95AA4B8B21055FB9008962F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95AA4B8921055FB9008962F5 /* LaunchScreen.storyboard */; };
@@ -30,15 +28,16 @@
 		95D102C4214C6BA70093177C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D102C3214C6BA70093177C /* APIClient.swift */; };
 		95D102C6214C6BB00093177C /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D102C5214C6BB00093177C /* APIRouter.swift */; };
 		95D102C8214C6C1F0093177C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D102C7214C6C1F0093177C /* User.swift */; };
-		95D102CA214C6D120093177C /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D102C9214C6D120093177C /* DateFormatter.swift */; };
+		95D25F67214EFF9000DD18AA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D25F64214EFF9000DD18AA /* APIError.swift */; };
+		95D25F69214EFF9000DD18AA /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D25F66214EFF9000DD18AA /* APIResponse.swift */; };
+		95D25F76214F010400DD18AA /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D25F75214F010400DD18AA /* DataContainer.swift */; };
+		95D25F7A214F237F00DD18AA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D25F79214F237F00DD18AA /* LoginViewController.swift */; };
 		95F2B9A4210BD81300B9D5B9 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F2B9A3210BD81300B9D5B9 /* PostDetailViewController.swift */; };
 		95F6A33F21443823009098CB /* HTTPParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A32F21443823009098CB /* HTTPParameter.swift */; };
 		95F6A34021443823009098CB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33021443823009098CB /* Result.swift */; };
 		95F6A34121443823009098CB /* md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33121443823009098CB /* md5.swift */; };
 		95F6A34221443823009098CB /* URLQueryItemEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33221443823009098CB /* URLQueryItemEncoder.swift */; };
-		95F6A34321443823009098CB /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33421443823009098CB /* DataContainer.swift */; };
 		95F6A34521443823009098CB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33621443823009098CB /* Image.swift */; };
-		95F6A34921443823009098CB /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A33A21443823009098CB /* APIRequest.swift */; };
 		95F6A34B214438E9009098CB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A34A214438E9009098CB /* Post.swift */; };
 		95F6A34D21443902009098CB /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A34C21443902009098CB /* Artist.swift */; };
 		95F6A35121443995009098CB /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A35021443994009098CB /* SwiftyJSON.swift */; };
@@ -66,16 +65,14 @@
 		0C605DAA8AE60B41341E7D46 /* Pods-UrbanApplauseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UrbanApplauseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UrbanApplauseTests/Pods-UrbanApplauseTests.release.xcconfig"; sourceTree = "<group>"; };
 		50A26EC127C1299E12918200 /* Pods-UrbanApplauseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UrbanApplauseUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UrbanApplauseUITests/Pods-UrbanApplauseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCA52A0BD280FB13AACFCA2 /* Pods-UrbanApplause.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UrbanApplause.release.xcconfig"; path = "Pods/Target Support Files/Pods-UrbanApplause/Pods-UrbanApplause.release.xcconfig"; sourceTree = "<group>"; };
+		9537B9ED2151E45B00CD92EE /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
+		9559AF392150924C0043302F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9559AF3B215095020043302F /* SelectPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoViewController.swift; sourceTree = "<group>"; };
+		9559AF3F2150F29B0043302F /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		955EC592210CBDE700B21207 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		955EC594210CC8D800B21207 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		955EC596210D410500B21207 /* PostFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFormViewController.swift; sourceTree = "<group>"; };
-		955EC598210DF78500B21207 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		955EC59A210DFED300B21207 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		95A87D9121443BF90034EED3 /* GetPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPosts.swift; sourceTree = "<group>"; };
-		95A87D9521443D220034EED3 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
-		95A87D9721443D460034EED3 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		95A87D99214443F10034EED3 /* GetArtists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArtists.swift; sourceTree = "<group>"; };
-		95A87D9B2144A0D00034EED3 /* GetToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetToken.swift; sourceTree = "<group>"; };
+		955EC59A210DFED300B21207 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		95AA4B7D21055FB9008962F5 /* UrbanApplause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanApplause.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AA4B8021055FB9008962F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95AA4B8721055FB9008962F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,15 +90,16 @@
 		95D102C3214C6BA70093177C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		95D102C5214C6BB00093177C /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		95D102C7214C6C1F0093177C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		95D102C9214C6D120093177C /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		95D25F64214EFF9000DD18AA /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		95D25F66214EFF9000DD18AA /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		95D25F75214F010400DD18AA /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
+		95D25F79214F237F00DD18AA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		95F2B9A3210BD81300B9D5B9 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		95F6A32F21443823009098CB /* HTTPParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPParameter.swift; sourceTree = "<group>"; };
 		95F6A33021443823009098CB /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		95F6A33121443823009098CB /* md5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = md5.swift; sourceTree = "<group>"; };
 		95F6A33221443823009098CB /* URLQueryItemEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLQueryItemEncoder.swift; sourceTree = "<group>"; };
-		95F6A33421443823009098CB /* DataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 		95F6A33621443823009098CB /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		95F6A33A21443823009098CB /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		95F6A34A214438E9009098CB /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		95F6A34C21443902009098CB /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		95F6A35021443994009098CB /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -181,17 +179,19 @@
 			children = (
 				955EC592210CBDE700B21207 /* Main.storyboard */,
 				95AA4B8021055FB9008962F5 /* AppDelegate.swift */,
-				95D102C2214C6B8A0093177C /* APIClient */,
 				95D102BE214C6AA00093177C /* Constants.swift */,
+				95D102C2214C6B8A0093177C /* APIClient */,
 				95F6A33321443823009098CB /* Models */,
-				95F6A32921443823009098CB /* Requests */,
 				95F6A32E21443823009098CB /* Utils */,
-				955EC59A210DFED300B21207 /* AuthViewController.swift */,
+				955EC59A210DFED300B21207 /* SignupViewController.swift */,
+				95D25F79214F237F00DD18AA /* LoginViewController.swift */,
 				95AA4BAE2105600E008962F5 /* PostTableViewController.swift */,
-				955EC596210D410500B21207 /* PostFormViewController.swift */,
 				95AA4BB421056717008962F5 /* PostTableViewCell.swift */,
 				95F2B9A3210BD81300B9D5B9 /* PostDetailViewController.swift */,
+				9559AF3B215095020043302F /* SelectPhotoViewController.swift */,
+				955EC596210D410500B21207 /* PostFormViewController.swift */,
 				955EC594210CC8D800B21207 /* ImageViewController.swift */,
+				9559AF392150924C0043302F /* ProfileViewController.swift */,
 				95AA4B8721055FB9008962F5 /* Assets.xcassets */,
 				95AA4B8921055FB9008962F5 /* LaunchScreen.storyboard */,
 				95AA4B8C21055FB9008962F5 /* Info.plist */,
@@ -220,22 +220,14 @@
 		95D102C2214C6B8A0093177C /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
-				955EC598210DF78500B21207 /* Session.swift */,
+				9537B9ED2151E45B00CD92EE /* APISession.swift */,
 				95D102C3214C6BA70093177C /* APIClient.swift */,
 				95D102C5214C6BB00093177C /* APIRouter.swift */,
+				95D25F66214EFF9000DD18AA /* APIResponse.swift */,
+				95D25F64214EFF9000DD18AA /* APIError.swift */,
+				95D25F75214F010400DD18AA /* DataContainer.swift */,
 			);
 			path = APIClient;
-			sourceTree = "<group>";
-		};
-		95F6A32921443823009098CB /* Requests */ = {
-			isa = PBXGroup;
-			children = (
-				95A87D9121443BF90034EED3 /* GetPosts.swift */,
-				95A87D99214443F10034EED3 /* GetArtists.swift */,
-				95A87D9B2144A0D00034EED3 /* GetToken.swift */,
-			);
-			name = Requests;
-			path = ../../MarvelAPI/MarvelAPI.playground/Sources/Requests;
 			sourceTree = "<group>";
 		};
 		95F6A32E21443823009098CB /* Utils */ = {
@@ -246,6 +238,7 @@
 				95F6A33021443823009098CB /* Result.swift */,
 				95F6A33121443823009098CB /* md5.swift */,
 				95F6A33221443823009098CB /* URLQueryItemEncoder.swift */,
+				9559AF3F2150F29B0043302F /* RootViewController.swift */,
 			);
 			name = Utils;
 			path = ../../MarvelAPI/MarvelAPI.playground/Sources/Utils;
@@ -254,15 +247,10 @@
 		95F6A33321443823009098CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				95F6A33421443823009098CB /* DataContainer.swift */,
 				95F6A33621443823009098CB /* Image.swift */,
-				95A87D9521443D220034EED3 /* APIResponse.swift */,
-				95A87D9721443D460034EED3 /* APIError.swift */,
-				95F6A33A21443823009098CB /* APIRequest.swift */,
 				95F6A34A214438E9009098CB /* Post.swift */,
 				95F6A34C21443902009098CB /* Artist.swift */,
 				95D102C7214C6C1F0093177C /* User.swift */,
-				95D102C9214C6D120093177C /* DateFormatter.swift */,
 			);
 			name = Models;
 			path = ../../MarvelAPI/MarvelAPI.playground/Sources/Models;
@@ -471,10 +459,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-UrbanApplause/Pods-UrbanApplause-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -489,30 +479,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				955EC597210D410500B21207 /* PostFormViewController.swift in Sources */,
-				95A87D9C2144A0D00034EED3 /* GetToken.swift in Sources */,
-				955EC59B210DFED300B21207 /* AuthViewController.swift in Sources */,
+				955EC59B210DFED300B21207 /* SignupViewController.swift in Sources */,
 				95D102C6214C6BB00093177C /* APIRouter.swift in Sources */,
+				95D25F7A214F237F00DD18AA /* LoginViewController.swift in Sources */,
 				95F6A34B214438E9009098CB /* Post.swift in Sources */,
 				95D102C8214C6C1F0093177C /* User.swift in Sources */,
+				9559AF3A2150924C0043302F /* ProfileViewController.swift in Sources */,
 				95F6A34121443823009098CB /* md5.swift in Sources */,
-				95A87D9A214443F10034EED3 /* GetArtists.swift in Sources */,
+				9537B9EE2151E45B00CD92EE /* APISession.swift in Sources */,
 				95D102BF214C6AA00093177C /* Constants.swift in Sources */,
+				9559AF3C215095020043302F /* SelectPhotoViewController.swift in Sources */,
 				95F6A33F21443823009098CB /* HTTPParameter.swift in Sources */,
 				95F6A34021443823009098CB /* Result.swift in Sources */,
-				95A87D9821443D460034EED3 /* APIError.swift in Sources */,
-				95F6A34921443823009098CB /* APIRequest.swift in Sources */,
-				95F6A34321443823009098CB /* DataContainer.swift in Sources */,
 				95F2B9A4210BD81300B9D5B9 /* PostDetailViewController.swift in Sources */,
 				95D102C4214C6BA70093177C /* APIClient.swift in Sources */,
 				95F6A35121443995009098CB /* SwiftyJSON.swift in Sources */,
 				955EC595210CC8D800B21207 /* ImageViewController.swift in Sources */,
-				955EC599210DF78500B21207 /* Session.swift in Sources */,
-				95A87D9221443BF90034EED3 /* GetPosts.swift in Sources */,
+				95D25F69214EFF9000DD18AA /* APIResponse.swift in Sources */,
 				95F6A34521443823009098CB /* Image.swift in Sources */,
-				95A87D9621443D220034EED3 /* APIResponse.swift in Sources */,
+				95D25F76214F010400DD18AA /* DataContainer.swift in Sources */,
+				9559AF402150F29B0043302F /* RootViewController.swift in Sources */,
 				95F6A34221443823009098CB /* URLQueryItemEncoder.swift in Sources */,
 				95AA4B8121055FB9008962F5 /* AppDelegate.swift in Sources */,
-				95D102CA214C6D120093177C /* DateFormatter.swift in Sources */,
+				95D25F67214EFF9000DD18AA /* APIError.swift in Sources */,
 				95AA4BB521056717008962F5 /* PostTableViewCell.swift in Sources */,
 				95AA4BAF2105600E008962F5 /* PostTableViewController.swift in Sources */,
 				95F6A34D21443902009098CB /* Artist.swift in Sources */,

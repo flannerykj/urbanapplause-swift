@@ -18,7 +18,10 @@ class PostDetailViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+
+        self.title = "Detail"
         if let post = selectedPost {
             if let imageUrl = post.imageUrl {
                 imageView.load(url: imageUrl)

@@ -16,6 +16,7 @@ struct K {
     struct APIParameterKey {
         static let password = "password"
         static let email = "email"
+        static let newPost = "post"
     }
 }
 

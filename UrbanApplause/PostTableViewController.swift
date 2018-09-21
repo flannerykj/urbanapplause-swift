@@ -14,6 +14,7 @@ class PostTableViewController: UITableViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
         APIClient.getPosts() { data in
             let dateFormatter = DateFormatter()
             dateFormatter.calendar = Calendar(identifier: .iso8601)
@@ -36,22 +37,6 @@ class PostTableViewController: UITableViewController {
                 
             }
             
-        }
-        
-        if APIClient.authenticated() {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPost))
-        } else {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign In", style: .plain, target: self, action: #selector(showAuthModal))
-        } 
-    }
-
-    @objc func addNewPost() {
-        
-    }
-    @objc func showAuthModal() {
-        print("showing auth modal")
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "AuthForm") as? AuthViewController {
-            navigationController?.pushViewController(vc, animated: true)
         }
     }
 
@@ -87,7 +72,7 @@ class PostTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "PostDetail") as? PostDetailViewController {
             vc.selectedPost = posts[indexPath.row]
-            navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

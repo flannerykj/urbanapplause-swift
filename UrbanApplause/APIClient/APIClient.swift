@@ -10,24 +10,57 @@ import Foundation
 import Alamofire
 
 class APIClient {
-    private static var token: String?
-    private static var tokenExpiry: Date?
-    
+
     @discardableResult
     static private func send(route: APIRouter, decoder: JSONDecoder = JSONDecoder(), success:@escaping (_ response : Data)->(), failure : @escaping (_ error : Error)->()) {
         Alamofire.request(route).responseData { response in
                 switch response.result {
                 case .success:
                     if let data = response.data {
+                        print("about to call success")
                         success(data)
                     }
                 case .failure(let error):
+                    print("FAILURE")
                     failure(error)
                 }
         }
     }
     static func login(email: String, password: String, success:@escaping (_ response : Data)->()) {
-        send(route: APIRouter.login(email: email, password: password), success: success, failure: failure)
+        
+        
+        func loginSuccess(data: Data) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.calendar = Calendar(identifier: .iso8601)
+            dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(dateFormatter)
+            do {
+                let apiResponse = try decoder.decode(APIResponse<AuthContainer>.self, from: data)
+                if let token = apiResponse.data?.token, let expires = apiResponse.data?.expires {
+                    print("TOKEN: \(token)")
+                    APISession.setToken(token: token, expires: expires)
+                    success(data)
+                } else {
+                    print(apiResponse)
+                }
+            } catch {
+                print("unable to decode response")
+                print(error)
+            }
+        }
+        send(route: APIRouter.login(email: email, password: password), success: loginSuccess, failure: failure)
+    }
+    
+    static func signup(email: String, password: String, success:@escaping (_ response : Data)->()) {
+        send(route: APIRouter.signup(email: email, password: password), success: success, failure: failure)
+    }
+    static func addPost(post: Post, success:@escaping (_ response : Data)->()) {
+        print(post)
+        print("attempting to post Post")
+        send(route: APIRouter.addPost(post: post), success: success, failure: failure)
     }
     
     static func failure(error: Error) {
@@ -35,37 +68,6 @@ class APIClient {
     }
     static func getPosts(success:@escaping (_ response : Data)->()) {
         let jsonDecoder = JSONDecoder()
-        jsonDecoder.dateDecodingStrategy = .formatted(.postDateFormatter)
         send(route: APIRouter.getPosts, decoder: jsonDecoder, success: success, failure: failure)
     }
 }
-
-extension APIClient {
-
-    // exposed getters & setters
-    static func setToken(token: String, expires: Date) {
-        self.token = token
-        self.tokenExpiry = expires
-    }
-    static func getToken() -> String? {
-        return self.token
-    }
-    static func authenticated() -> Bool {
-        if let _ = self.token {
-            if !isTokenExpired() {
-                return true
-            }
-        }
-        return false
-    }
-    static func isTokenExpired() -> Bool {
-        if let expires = self.tokenExpiry {
-            if expires > Date.init(timeIntervalSinceNow: 0) {
-                return false
-            }
-        }
-        return true
-    }
-}
-
-

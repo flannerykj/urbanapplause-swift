@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class AuthViewController: UIViewController {
+class SignupViewController: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -18,7 +18,7 @@ class AuthViewController: UIViewController {
         // A simple request with no parameters
         if let password = passwordField.text {
             if let email = emailField.text {
-                APIClient.login(email: email, password: password) { data in
+                APIClient.signup(email: email, password: password) { data in
                     let decoder = JSONDecoder()
                     do {
                         let apiResponse = try decoder.decode(APIResponse<AuthContainer>.self, from: data)
@@ -40,7 +40,6 @@ class AuthViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
 
@@ -48,7 +47,6 @@ class AuthViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

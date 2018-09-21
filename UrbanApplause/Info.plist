@@ -23,6 +23,10 @@
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>$(PRODUCT_NAME) photo library use</string>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) camera use</string>
+	<key>NSAppleMusicUsageDescription</key>
 	<string>YES</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

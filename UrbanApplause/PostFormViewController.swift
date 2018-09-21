@@ -10,10 +10,29 @@ import UIKit
 
 class PostFormViewController: UIViewController {
     
-    var post: Post?
+    var post = Post()
+    var selectedImage: UIImage?
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var cityField: UITextField!
+    
+    @IBOutlet weak var descriptionField: UITextField!
+    @IBOutlet weak var artistField: UITextField!
+    
+    @IBOutlet weak var submitButton: UIButton!
+    @IBAction func onPressSubmit(_ sender: UIButton) {
+        self.post.artist = self.artistField.text ?? "some artist"
+        self.post.formattedAddress = self.cityField.text ?? "199 some address st, Toronto"
+        self.post.description = self.descriptionField.text ?? "some description"
+        APIClient.addPost(post: self.post) { data in
+            print(data)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.image = selectedImage
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = false
 
         // Do any additional setup after loading the view.
     }

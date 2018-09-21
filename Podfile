@@ -7,6 +7,7 @@ target 'UrbanApplause' do
 
   # Pods for UrbanApplause
   pod 'Alamofire', '~> 4.7'
+  pod 'SwiftKeychainWrapper', '~> 3.0'
 
   target 'UrbanApplauseTests' do
     inherit! :search_paths
