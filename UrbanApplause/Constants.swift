@@ -10,13 +10,14 @@ import Foundation
 
 struct K {
     struct DevelopmentServer {
-        static let baseURL = "http://localhost:4000/api"
+        static let baseURL = "http://localhost:8080/api"
     }
     
     struct APIParameterKey {
         static let password = "password"
         static let email = "email"
-        static let newPost = "post"
+        static let post = "post"
+        static let images = "images"
     }
 }
 

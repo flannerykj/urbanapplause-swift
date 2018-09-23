@@ -31,7 +31,11 @@ extension UIImageView {
                     DispatchQueue.main.async {
                         self?.image = image
                     }
+                } else {
+                    print("COULDNT READ IMAGE FROM DATA")
                 }
+            } else {
+                print("CANNOT GET IMAGE DATA")
             }
         }
     }

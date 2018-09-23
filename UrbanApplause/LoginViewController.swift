@@ -19,21 +19,29 @@ class LoginViewController: UIViewController {
         if let password = passwordField.text {
             if let email = emailField.text {
                 APIClient.login(email: email, password: password) { data in
-                    let appDelegate = UIApplication.shared.delegate! as! AppDelegate
-                    
-                    let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "TabBar")
-                    appDelegate.window?.rootViewController = initialViewController
-                    appDelegate.window?.makeKeyAndVisible()
+                    self.goToApp()
                 }
             }
         }
         
     }
+    func goToApp() {
+        let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+        
+        let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "TabBar")
+        appDelegate.window?.rootViewController = initialViewController
+        appDelegate.window?.makeKeyAndVisible()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        emailField.text = "flannery@dothealth.ca"
+        
+        emailField.text = "flannj@gmail.com"
         passwordField.text = "cheesecake"
+        // Do any additional setup after loading the view.
+        APISession.getTokenFromKeychain()
+        if APISession.isAuthenticated() {
+            self.goToApp()
+        }
     }
     
     override func didReceiveMemoryWarning() {

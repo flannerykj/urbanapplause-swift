@@ -10,6 +10,13 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBAction func logoutButtonPressed(_ sender: Any) {
+        APISession.endSession()
+        let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+        let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "AuthNav")
+        appDelegate.window?.rootViewController = initialViewController
+        appDelegate.window?.makeKeyAndVisible()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

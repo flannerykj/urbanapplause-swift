@@ -10,9 +10,9 @@ import Foundation
 import Alamofire
 
 class APIClient {
-
-    @discardableResult
-    static private func send(route: APIRouter, decoder: JSONDecoder = JSONDecoder(), success:@escaping (_ response : Data)->(), failure : @escaping (_ error : Error)->()) {
+    static let baseURL = "http://localhost:8080/api"
+    
+    static func send(route: APIRouter, decoder: JSONDecoder = JSONDecoder(), success:@escaping (_ response : Data)->(), failure : @escaping (_ error : Error)->()) {
         Alamofire.request(route).responseData { response in
                 switch response.result {
                 case .success:
@@ -39,9 +39,11 @@ class APIClient {
             decoder.dateDecodingStrategy = .formatted(dateFormatter)
             do {
                 let apiResponse = try decoder.decode(APIResponse<AuthContainer>.self, from: data)
-                if let token = apiResponse.data?.token, let expires = apiResponse.data?.expires {
+                if let token = apiResponse.data?.token, let expires = apiResponse.data?.expires, let user = apiResponse.data?.user {
                     print("TOKEN: \(token)")
-                    APISession.setToken(token: token, expires: expires)
+                    print("USER: \(user)")
+                    APISession.setToken(token: token, expires: expires, user: user)
+                    APISession.user = user
                     success(data)
                 } else {
                     print(apiResponse)
@@ -59,8 +61,10 @@ class APIClient {
     }
     static func addPost(post: Post, success:@escaping (_ response : Data)->()) {
         print(post)
-        print("attempting to post Post")
         send(route: APIRouter.addPost(post: post), success: success, failure: failure)
+    }
+    static func upload(image: UIImage, success:@escaping (_ response : Data)->()) {
+        
     }
     
     static func failure(error: Error) {

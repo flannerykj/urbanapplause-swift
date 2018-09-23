@@ -60,8 +60,8 @@ class PostTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
         let post = posts[indexPath.row]
-        if let url = post.imageUrl {
-            print(url)
+        if let url: URL = URL(string: "\(APIClient.baseURL)/uploads/\(post.image)") {
+            print("URLLLLLLl: \(url)")
             cell.featuredImageView.load(url: url)
             cell.featuredImageView.contentMode = .scaleAspectFill
             cell.featuredImageView.clipsToBounds = true

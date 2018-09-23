@@ -10,6 +10,7 @@
 		0E4F86B29246A5ECFA9713F7 /* Pods_UrbanApplause.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68BAC5981306F8C22D9AAC8 /* Pods_UrbanApplause.framework */; };
 		69778D31B4B4F414802083CC /* Pods_UrbanApplauseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77C9E60E57592BD2EA59A4B /* Pods_UrbanApplauseTests.framework */; };
 		9537B9EE2151E45B00CD92EE /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537B9ED2151E45B00CD92EE /* APISession.swift */; };
+		9539BCF9215672F4001A705C /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539BCF8215672F4001A705C /* Place.swift */; };
 		9559AF3A2150924C0043302F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9559AF392150924C0043302F /* ProfileViewController.swift */; };
 		9559AF3C215095020043302F /* SelectPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9559AF3B215095020043302F /* SelectPhotoViewController.swift */; };
 		9559AF402150F29B0043302F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9559AF3F2150F29B0043302F /* RootViewController.swift */; };
@@ -66,6 +67,7 @@
 		50A26EC127C1299E12918200 /* Pods-UrbanApplauseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UrbanApplauseUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UrbanApplauseUITests/Pods-UrbanApplauseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCA52A0BD280FB13AACFCA2 /* Pods-UrbanApplause.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UrbanApplause.release.xcconfig"; path = "Pods/Target Support Files/Pods-UrbanApplause/Pods-UrbanApplause.release.xcconfig"; sourceTree = "<group>"; };
 		9537B9ED2151E45B00CD92EE /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
+		9539BCF8215672F4001A705C /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		9559AF392150924C0043302F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9559AF3B215095020043302F /* SelectPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoViewController.swift; sourceTree = "<group>"; };
 		9559AF3F2150F29B0043302F /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				95F6A33621443823009098CB /* Image.swift */,
+				9539BCF8215672F4001A705C /* Place.swift */,
 				95F6A34A214438E9009098CB /* Post.swift */,
 				95F6A34C21443902009098CB /* Artist.swift */,
 				95D102C7214C6C1F0093177C /* User.swift */,
@@ -497,6 +500,7 @@
 				955EC595210CC8D800B21207 /* ImageViewController.swift in Sources */,
 				95D25F69214EFF9000DD18AA /* APIResponse.swift in Sources */,
 				95F6A34521443823009098CB /* Image.swift in Sources */,
+				9539BCF9215672F4001A705C /* Place.swift in Sources */,
 				95D25F76214F010400DD18AA /* DataContainer.swift in Sources */,
 				9559AF402150F29B0043302F /* RootViewController.swift in Sources */,
 				95F6A34221443823009098CB /* URLQueryItemEncoder.swift in Sources */,

@@ -16,6 +16,7 @@ enum APIRouter: URLRequestConvertible {
     case getPosts
     case getPost(id: Int)
     case addPost(post: Post)
+    case upload(images: [String])
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
@@ -26,7 +27,10 @@ enum APIRouter: URLRequestConvertible {
             return .get
         case .addPost:
             return .post
+        case .upload:
+            return .post
         }
+        
     }
     
     // MARK: - Path
@@ -42,6 +46,8 @@ enum APIRouter: URLRequestConvertible {
             return "/posts/\(id)"
         case .addPost:
             return "/posts"
+        case .upload:
+            return "/upload"
         }
     }
     
@@ -53,12 +59,23 @@ enum APIRouter: URLRequestConvertible {
         case .getPosts, .getPost:
             return nil
         case .addPost(let post):
-            return [K.APIParameterKey.newPost: post]
+            return [
+                "description": post.description,
+                "formattedAddress": post.formattedAddress,
+                "artist": post.artist,
+                "artistId": post.artistId,
+                "username": post.username,
+                "userId": post.userId,
+                "image": post.image
+            ]
+        case .upload(let images):
+            return [K.APIParameterKey.images: images]
         }
     }
     
     // MARK: - URLRequestConvertible
     func asURLRequest() throws -> URLRequest {
+        print("THIS WAS CALLED")
         let url = try K.DevelopmentServer.baseURL.asURL()
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
@@ -71,14 +88,24 @@ enum APIRouter: URLRequestConvertible {
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         
         // Parameters
-        if let parameters = parameters {
+        print("DOING PARAMS")
+        if let params = parameters {
             do {
-                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+                print(path)
+                if path != "/upload" {
+                    print("DOING FORM PRams: \(params)")
+                } else {
+                    print("not")
+                }
+                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
             } catch {
-                throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
+                print("ABOUT TO FAIL")
+                // throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
+        } else {
+            print("PARAMS ARE NIL")
         }
-        
+        print("URL REQUEST: \(urlRequest)")
         return urlRequest
     }
 }

@@ -12,6 +12,7 @@ class PostFormViewController: UIViewController {
     
     var post = Post()
     var selectedImage: UIImage?
+    var imageName: String?
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cityField: UITextField!
@@ -21,12 +22,26 @@ class PostFormViewController: UIViewController {
     
     @IBOutlet weak var submitButton: UIButton!
     @IBAction func onPressSubmit(_ sender: UIButton) {
-        self.post.artist = self.artistField.text ?? "some artist"
-        self.post.formattedAddress = self.cityField.text ?? "199 some address st, Toronto"
-        self.post.description = self.descriptionField.text ?? "some description"
-        APIClient.addPost(post: self.post) { data in
-            print(data)
+        if let image = self.imageName, let user = APISession.user {
+            self.post.image = image
+            self.post.artistId = 1
+            self.post.userId = user.id
+            self.post.username = user.username
+            self.post.artist = self.artistField.text ?? "some artist"
+            self.post.formattedAddress = self.cityField.text ?? "199 some address st, Toronto"
+            self.post.description = self.descriptionField.text ?? "some description"
+            
+            APIClient.send(route: .addPost(post: self.post), success: onSuccess) { error in
+                print("psot failured")
+            }
+    
+        } else {
+            print("ERROR: user not set")
         }
+    }
+    func onSuccess(data: Data) {
+        print("success")
+        self.tabBarController?.selectedIndex = 0
     }
     override func viewDidLoad() {
         super.viewDidLoad()
