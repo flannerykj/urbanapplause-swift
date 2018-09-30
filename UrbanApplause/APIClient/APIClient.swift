@@ -46,11 +46,11 @@ class APIClient {
                     APISession.user = user
                     success(data)
                 } else {
-                    print(apiResponse)
+                    print("apiResponse")
                 }
             } catch {
                 print("unable to decode response")
-                print(error)
+                print("error")
             }
         }
         send(route: APIRouter.login(email: email, password: password), success: loginSuccess, failure: failure)
@@ -60,7 +60,7 @@ class APIClient {
         send(route: APIRouter.signup(email: email, password: password), success: success, failure: failure)
     }
     static func addPost(post: Post, success:@escaping (_ response : Data)->()) {
-        print(post)
+        print("post")
         send(route: APIRouter.addPost(post: post), success: success, failure: failure)
     }
     static func upload(image: UIImage, success:@escaping (_ response : Data)->()) {
@@ -68,7 +68,7 @@ class APIClient {
     }
     
     static func failure(error: Error) {
-        print(error)
+        print("error")
     }
     static func getPosts(success:@escaping (_ response : Data)->()) {
         let jsonDecoder = JSONDecoder()

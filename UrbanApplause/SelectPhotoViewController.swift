@@ -47,16 +47,17 @@ class SelectPhotoViewController: UIViewController, UIImagePickerControllerDelega
         do {
             let apiResponse: APIResponse<Array<String>> = try decoder.decode(APIResponse<Array<String>>.self, from: data)
             if let filename = apiResponse.data?[0] {
-                print(filename)
+                print("filename")
                 if let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostForm") as? PostFormViewController {
                     vc.selectedImage = self.selectedImage
+                    print("FILENAME: ", filename)
                     vc.imageName = filename
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             }
         } catch {
             print("error trying to decode response")
-            print(error)
+            print("error")
             
         }
          print("success")

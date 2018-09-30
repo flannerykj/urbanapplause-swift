@@ -30,7 +30,6 @@ enum APIRouter: URLRequestConvertible {
         case .upload:
             return .post
         }
-        
     }
     
     // MARK: - Path
@@ -47,7 +46,7 @@ enum APIRouter: URLRequestConvertible {
         case .addPost:
             return "/posts"
         case .upload:
-            return "/upload"
+            return "/uploads"
         }
     }
     
@@ -61,11 +60,10 @@ enum APIRouter: URLRequestConvertible {
         case .addPost(let post):
             return [
                 "description": post.description,
-                "formattedAddress": post.formattedAddress,
-                "artist": post.artist,
-                "artistId": post.artistId,
+                "artist_name": post.artist_name,
+                "artist_id": post.artist_id,
                 "username": post.username,
-                "userId": post.userId,
+                "user_id": post.user_id,
                 "image": post.image
             ]
         case .upload(let images):
@@ -75,7 +73,6 @@ enum APIRouter: URLRequestConvertible {
     
     // MARK: - URLRequestConvertible
     func asURLRequest() throws -> URLRequest {
-        print("THIS WAS CALLED")
         let url = try K.DevelopmentServer.baseURL.asURL()
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
@@ -88,24 +85,13 @@ enum APIRouter: URLRequestConvertible {
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         
         // Parameters
-        print("DOING PARAMS")
         if let params = parameters {
             do {
-                print(path)
-                if path != "/upload" {
-                    print("DOING FORM PRams: \(params)")
-                } else {
-                    print("not")
-                }
                 urlRequest.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
             } catch {
-                print("ABOUT TO FAIL")
                 // throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
-        } else {
-            print("PARAMS ARE NIL")
         }
-        print("URL REQUEST: \(urlRequest)")
         return urlRequest
     }
 }

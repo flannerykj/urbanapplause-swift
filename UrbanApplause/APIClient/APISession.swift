@@ -12,9 +12,8 @@ import SwiftKeychainWrapper
 struct AuthKeychain: Codable {
     var token: String
     var tokenExpires: Date
-    var userId: Int
-    var username: String
-    var userEmail: String
+    var user_id: Int
+    var user_email: String
 }
 
 class APISession {
@@ -34,7 +33,7 @@ class APISession {
     
     static func setToken(token: String, expires: Date, user: User) {
         print(user)
-        let auth = AuthKeychain(token: token, tokenExpires: expires, userId: user.id, username: user.username, userEmail: user.email)
+        let auth = AuthKeychain(token: token, tokenExpires: expires, user_id: user.id, user_email: user.email)
         
         if let codedAuth = try? JSONEncoder().encode(auth) {
             print(codedAuth)
@@ -59,11 +58,11 @@ class APISession {
         if let auth = KeychainWrapper.standard.string(forKey: "auth") {
             if let data = auth.data(using: .utf8) {
                 print(auth)
-                if let decodedAuth =  try? JSONDecoder().decode(AuthKeychain.self, from: data) {
-                    print("TRYING TO DECODE \(data)")
+                if let decodedAuth = try? JSONDecoder().decode(AuthKeychain.self, from: data) {
+                    print("TRYING TO DECODE ")
                     self.token = decodedAuth.token
                     self.tokenExpiry = decodedAuth.tokenExpires
-                    self.user = User(id: decodedAuth.userId, username: decodedAuth.username, email: decodedAuth.userEmail)
+                    self.user = User(id: decodedAuth.user_id, email: decodedAuth.user_email, username: "")
                     print("success, token is: \(decodedAuth.token), expiry is: \(decodedAuth.tokenExpires)")
                     print(APISession.isAuthenticated())
                 } else {

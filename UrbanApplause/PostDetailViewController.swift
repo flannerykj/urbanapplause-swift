@@ -26,7 +26,7 @@ class PostDetailViewController: UIViewController {
 
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onTapImage))
             imageView.addGestureRecognizer(tapGestureRecognizer)
-            artistLabel.text = post.artist
+            artistLabel.text = post.artist_name
             title = "Post Detail"
             
         }
@@ -34,10 +34,7 @@ class PostDetailViewController: UIViewController {
 
     @objc func onTapImage(sender: UITapGestureRecognizer) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "ImageDetail") as? ImageViewController {
-            if let post = selectedPost {
-                // vc.imageTitle = "Work by \(post.artist)"
-               
-            }
+            vc.imageView.image = self.imageView.image
             navigationController?.pushViewController(vc, animated: true)
         }
         

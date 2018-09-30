@@ -26,6 +26,7 @@ class PostTableViewCell: UITableViewCell {
 extension UIImageView {
     func load(url: URL) {
         DispatchQueue.global().async { [weak self] in
+            print("URL: ", url.absoluteString)
             if let data = try? Data(contentsOf: url) {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {

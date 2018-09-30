@@ -10,7 +10,7 @@ import UIKit
 
 class PostFormViewController: UIViewController {
     
-    var post = Post()
+    var post = Post(id: 0, image: "", date_posted: Date(), description: "", artist_id: 0, artist_name: "", username: "", user_id: 0)
     var selectedImage: UIImage?
     var imageName: String?
 
@@ -23,14 +23,13 @@ class PostFormViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     @IBAction func onPressSubmit(_ sender: UIButton) {
         if let image = self.imageName, let user = APISession.user {
+            self.post.artist_id = 1
             self.post.image = image
-            self.post.artistId = 1
-            self.post.userId = user.id
-            self.post.username = user.username
-            self.post.artist = self.artistField.text ?? "some artist"
-            self.post.formattedAddress = self.cityField.text ?? "199 some address st, Toronto"
+            self.post.user_id = user.id
+            self.post.username = user.email
+            self.post.artist_name = self.artistField.text ?? "some artist"
             self.post.description = self.descriptionField.text ?? "some description"
-            
+            print(self.post)
             APIClient.send(route: .addPost(post: self.post), success: onSuccess) { error in
                 print("psot failured")
             }
@@ -40,7 +39,24 @@ class PostFormViewController: UIViewController {
         }
     }
     func onSuccess(data: Data) {
-        print("success")
+        let decoder = JSONDecoder()
+        do {
+            let apiResponse = try decoder.decode(APIResponse<DataContainer<Post>>.self, from: data)
+            if let newPosts = apiResponse.data?.results {
+                for controller in self.navigationController!.viewControllers as Array {
+                    if controller.isKind(of: PostTableViewController.self) {
+                        self.navigationController!.popToViewController(controller, animated: true)
+                        break
+                    }
+                }
+                print("newPosts")
+            } else {
+                print("apiResponse")
+            }
+        } catch {
+            print("unable to decode response")
+            print(error)
+        }
         self.tabBarController?.selectedIndex = 0
     }
     override func viewDidLoad() {

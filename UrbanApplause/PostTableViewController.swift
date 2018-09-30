@@ -66,12 +66,16 @@ class PostTableViewController: UITableViewController {
             cell.featuredImageView.contentMode = .scaleAspectFill
             cell.featuredImageView.clipsToBounds = true
         }
-        cell.titleLabel.text = post.artist
+        cell.titleLabel.text = post.artist_name
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "PostDetail") as? PostDetailViewController {
             vc.selectedPost = posts[indexPath.row]
+    
+            if let cell = tableView.cellForRow(at: indexPath) as? PostTableViewCell {
+                vc.imageView.image = cell.featuredImageView.image
+            }
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
