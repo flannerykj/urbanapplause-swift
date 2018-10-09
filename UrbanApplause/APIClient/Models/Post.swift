@@ -15,7 +15,7 @@ public struct Post: Codable {
     public var description: String
     public var artist_id: Int
     public var artist_name: String
-    public var username: String
+    public var username: String?
     public var user_id: Int
 
     

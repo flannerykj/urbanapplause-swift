@@ -30,6 +30,7 @@ class APIClient {
         
         
         func loginSuccess(data: Data) {
+            
             let dateFormatter = DateFormatter()
             dateFormatter.calendar = Calendar(identifier: .iso8601)
             dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
@@ -39,6 +40,7 @@ class APIClient {
             decoder.dateDecodingStrategy = .formatted(dateFormatter)
             do {
                 let apiResponse = try decoder.decode(APIResponse<AuthContainer>.self, from: data)
+                
                 if let token = apiResponse.data?.token, let expires = apiResponse.data?.expires, let user = apiResponse.data?.user {
                     print("TOKEN: \(token)")
                     print("USER: \(user)")
@@ -46,11 +48,10 @@ class APIClient {
                     APISession.user = user
                     success(data)
                 } else {
-                    print("apiResponse")
+                    print(apiResponse)
                 }
             } catch {
                 print("unable to decode response")
-                print("error")
             }
         }
         send(route: APIRouter.login(email: email, password: password), success: loginSuccess, failure: failure)

@@ -16,6 +16,7 @@
 		955EC595210CC8D800B21207 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955EC594210CC8D800B21207 /* ImageViewController.swift */; };
 		955EC597210D410500B21207 /* PostFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955EC596210D410500B21207 /* PostFormViewController.swift */; };
 		955EC59B210DFED300B21207 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955EC59A210DFED300B21207 /* SignupViewController.swift */; };
+		9594C39F216C416B00045F32 /* PostTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594C39E216C416B00045F32 /* PostTableViewModel.swift */; };
 		95AA4B8121055FB9008962F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA4B8021055FB9008962F5 /* AppDelegate.swift */; };
 		95AA4B8821055FB9008962F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95AA4B8721055FB9008962F5 /* Assets.xcassets */; };
 		95AA4B8B21055FB9008962F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95AA4B8921055FB9008962F5 /* LaunchScreen.storyboard */; };
@@ -66,6 +67,7 @@
 		955EC594210CC8D800B21207 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		955EC596210D410500B21207 /* PostFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFormViewController.swift; sourceTree = "<group>"; };
 		955EC59A210DFED300B21207 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		9594C39E216C416B00045F32 /* PostTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewModel.swift; sourceTree = "<group>"; };
 		95AA4B7D21055FB9008962F5 /* UrbanApplause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanApplause.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AA4B8021055FB9008962F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95AA4B8721055FB9008962F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -140,6 +142,63 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9594C397216C40AC00045F32 /* PostTable */ = {
+			isa = PBXGroup;
+			children = (
+				95AA4BAE2105600E008962F5 /* PostTableViewController.swift */,
+				9594C39E216C416B00045F32 /* PostTableViewModel.swift */,
+				95AA4BB421056717008962F5 /* PostTableViewCell.swift */,
+			);
+			path = PostTable;
+			sourceTree = "<group>";
+		};
+		9594C398216C40D100045F32 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				955EC59A210DFED300B21207 /* SignupViewController.swift */,
+				95D25F79214F237F00DD18AA /* LoginViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		9594C399216C40DE00045F32 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9594C398216C40D100045F32 /* Auth */,
+				9594C397216C40AC00045F32 /* PostTable */,
+				9594C39B216C410E00045F32 /* PostForm */,
+				9594C39A216C40F200045F32 /* PostDetail */,
+				9594C39C216C412B00045F32 /* UserProfile */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		9594C39A216C40F200045F32 /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				955EC594210CC8D800B21207 /* ImageViewController.swift */,
+				95F2B9A3210BD81300B9D5B9 /* PostDetailViewController.swift */,
+			);
+			path = PostDetail;
+			sourceTree = "<group>";
+		};
+		9594C39B216C410E00045F32 /* PostForm */ = {
+			isa = PBXGroup;
+			children = (
+				955EC596210D410500B21207 /* PostFormViewController.swift */,
+				9559AF3B215095020043302F /* SelectPhotoViewController.swift */,
+			);
+			path = PostForm;
+			sourceTree = "<group>";
+		};
+		9594C39C216C412B00045F32 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				9559AF392150924C0043302F /* ProfileViewController.swift */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
 		95AA4B7421055FB9008962F5 = {
 			isa = PBXGroup;
 			children = (
@@ -165,21 +224,13 @@
 		95AA4B7F21055FB9008962F5 /* UrbanApplause */ = {
 			isa = PBXGroup;
 			children = (
+				9594C399216C40DE00045F32 /* Modules */,
 				955EC592210CBDE700B21207 /* Main.storyboard */,
 				95AA4B8021055FB9008962F5 /* AppDelegate.swift */,
 				95D102BE214C6AA00093177C /* Constants.swift */,
 				95ADD5BD215FC7BC00611919 /* Utils */,
 				95ADD5BC215FC7A700611919 /* Models */,
 				95D102C2214C6B8A0093177C /* APIClient */,
-				955EC59A210DFED300B21207 /* SignupViewController.swift */,
-				95D25F79214F237F00DD18AA /* LoginViewController.swift */,
-				95AA4BAE2105600E008962F5 /* PostTableViewController.swift */,
-				95AA4BB421056717008962F5 /* PostTableViewCell.swift */,
-				95F2B9A3210BD81300B9D5B9 /* PostDetailViewController.swift */,
-				9559AF3B215095020043302F /* SelectPhotoViewController.swift */,
-				955EC596210D410500B21207 /* PostFormViewController.swift */,
-				955EC594210CC8D800B21207 /* ImageViewController.swift */,
-				9559AF392150924C0043302F /* ProfileViewController.swift */,
 				95AA4B8721055FB9008962F5 /* Assets.xcassets */,
 				95AA4B8921055FB9008962F5 /* LaunchScreen.storyboard */,
 				95AA4B8C21055FB9008962F5 /* Info.plist */,
@@ -464,6 +515,7 @@
 				95ADD5C1215FC84400611919 /* Place.swift in Sources */,
 				955EC59B210DFED300B21207 /* SignupViewController.swift in Sources */,
 				95D102C6214C6BB00093177C /* APIRouter.swift in Sources */,
+				9594C39F216C416B00045F32 /* PostTableViewModel.swift in Sources */,
 				95D25F7A214F237F00DD18AA /* LoginViewController.swift in Sources */,
 				9559AF3A2150924C0043302F /* ProfileViewController.swift in Sources */,
 				95ADD5C5215FC87200611919 /* Artist.swift in Sources */,

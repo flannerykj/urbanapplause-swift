@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
         if let password = passwordField.text {
             if let email = emailField.text {
                 APIClient.login(email: email, password: password) { data in
+                    print("success here")
                     self.goToApp()
                 }
             }
@@ -26,6 +27,7 @@ class LoginViewController: UIViewController {
         
     }
     func goToApp() {
+        print("going to app")
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
         
         let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "TabBar")
