@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F6C5B144843DE53BC1B5B13076901C3E"
-               BlueprintName = "SwiftKeychainWrapper"
+               BlueprintIdentifier = "9749FEC86D945A13F98E7FCD33DB54AB"
+               BlueprintName = "Moya"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SwiftKeychainWrapper.framework">
+               BuildableName = "Moya.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

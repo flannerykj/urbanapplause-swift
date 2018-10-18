@@ -8,8 +8,9 @@
 
 import Foundation
 import Alamofire
+import Moya
 
-enum APIRouter: URLRequestConvertible {
+enum APIRouter {
     
     case login(email:String, password:String)
     case signup(email:String, password:String)
@@ -18,6 +19,10 @@ enum APIRouter: URLRequestConvertible {
     case addPost(post: Post)
     case upload(images: [String])
     case getImage(imageName: String)
+    
+}
+
+extension APIRouter: URLRequestConvertible {
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
