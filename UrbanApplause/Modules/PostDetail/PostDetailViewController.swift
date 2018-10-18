@@ -23,19 +23,33 @@ class PostDetailViewController: UIViewController {
 
         self.title = "Detail"
         if let post = selectedPost {
-
+            if let url: URL = URL(string: "\(APIClient.baseURL)/uploads/\(post.image)") {
+                imageView.load(url: url)
+                imageView.contentMode = .scaleAspectFill
+                imageView.clipsToBounds = true
+            }
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onTapImage))
             imageView.addGestureRecognizer(tapGestureRecognizer)
             artistLabel.text = post.artist_name
             title = "Post Detail"
-            
         }
+        setupNavigation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavigation()
+    }
+    func setupNavigation() {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.tabBarController?.tabBar.isHidden = true
     }
 
     @objc func onTapImage(sender: UITapGestureRecognizer) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "ImageDetail") as? ImageViewController {
-            vc.imageView.image = self.imageView.image
-            navigationController?.pushViewController(vc, animated: true)
+            if let image = selectedPost?.image {
+                vc.imageName = image
+                navigationController?.pushViewController(vc, animated: true)
+            }
         }
         
     }

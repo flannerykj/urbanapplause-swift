@@ -42,10 +42,16 @@ class PostFormViewController: UIViewController {
         let decoder = JSONDecoder()
         do {
             let apiResponse = try decoder.decode(APIResponse<DataContainer<Post>>.self, from: data)
-            if let newPosts = apiResponse.data?.results {
+            if let newPost = apiResponse.data?.results {
                 for controller in self.navigationController!.viewControllers as Array {
-                    if controller.isKind(of: PostTableViewController.self) {
-                        self.navigationController!.popToViewController(controller, animated: true)
+                    if let vc = controller as? PostTableViewController {
+                        vc.tableView.beginUpdates()
+                        let newIndexPath = IndexPath(row: 0, section: 1)
+                        vc.viewModel.posts += [newPost]
+                        vc.tableView.insertRows(at: [newIndexPath], with: .automatic)
+                        vc.tableView.cellForRow(at: newIndexPath)
+                        vc.tableView.endUpdates()
+                        self.navigationController!.popToViewController(vc, animated: true)
                         break
                     }
                 }
@@ -66,6 +72,11 @@ class PostFormViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.tabBarController?.tabBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {

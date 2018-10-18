@@ -16,6 +16,10 @@ class SelectPhotoViewController: UIViewController, UIImagePickerControllerDelega
         
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
     @IBAction func takePhotoButton(_ sender: UIButton) {
         let imagePicker =  UIImagePickerController()

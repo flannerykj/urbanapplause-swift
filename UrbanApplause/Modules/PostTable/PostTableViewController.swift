@@ -17,18 +17,18 @@ class PostTableViewController: UITableViewController {
         initVM()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     func initVM() {
         viewModel.reloadTableViewClosure = { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }
-        viewModel.initData()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        viewModel.fetchData()
     }
 }
 
@@ -47,6 +47,7 @@ extension PostTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
         let cellVM = viewModel.getCellViewModel(for: indexPath)
+        
         if let url: URL = URL(string: "\(APIClient.baseURL)/uploads/\(cellVM.imageName)") {
             cell.featuredImageView.load(url: url)
             cell.featuredImageView.contentMode = .scaleAspectFill
@@ -56,8 +57,9 @@ extension PostTableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         viewModel.userPressed(indexPath: indexPath)
+        return indexPath
     }
 }
 

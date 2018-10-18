@@ -15,7 +15,7 @@ class PostTableViewModel {
     
     var reloadTableViewClosure: (() -> ())?
     
-    func initData() {
+    func fetchData() {
         APIClient.getPosts { data in
             let dateFormatter = DateFormatter()
             dateFormatter.calendar = Calendar(identifier: .iso8601)

@@ -17,13 +17,14 @@ enum APIRouter: URLRequestConvertible {
     case getPost(id: Int)
     case addPost(post: Post)
     case upload(images: [String])
+    case getImage(imageName: String)
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
         case .login, .signup:
             return .post
-        case .getPosts, .getPost:
+        case .getPosts, .getPost, .getImage:
             return .get
         case .addPost:
             return .post
@@ -43,6 +44,8 @@ enum APIRouter: URLRequestConvertible {
             return "/posts"
         case .getPost(let id):
             return "/posts/\(id)"
+        case .getImage(let imageName):
+            return "/posts/\(imageName)"
         case .addPost:
             return "/posts"
         case .upload:
@@ -55,7 +58,7 @@ enum APIRouter: URLRequestConvertible {
         switch self {
         case .login(let email, let password), .signup(let email, let password):
             return [K.APIParameterKey.email: email, K.APIParameterKey.password: password]
-        case .getPosts, .getPost:
+        case .getPosts, .getPost, .getImage:
             return nil
         case .addPost(let post):
             return [

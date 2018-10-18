@@ -224,11 +224,10 @@
 		95AA4B7F21055FB9008962F5 /* UrbanApplause */ = {
 			isa = PBXGroup;
 			children = (
-				9594C399216C40DE00045F32 /* Modules */,
 				955EC592210CBDE700B21207 /* Main.storyboard */,
+				9594C399216C40DE00045F32 /* Modules */,
 				95AA4B8021055FB9008962F5 /* AppDelegate.swift */,
 				95D102BE214C6AA00093177C /* Constants.swift */,
-				95ADD5BD215FC7BC00611919 /* Utils */,
 				95ADD5BC215FC7A700611919 /* Models */,
 				95D102C2214C6B8A0093177C /* APIClient */,
 				95AA4B8721055FB9008962F5 /* Assets.xcassets */,
@@ -266,14 +265,6 @@
 			);
 			name = Models;
 			path = APIClient/Models;
-			sourceTree = "<group>";
-		};
-		95ADD5BD215FC7BC00611919 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Utils;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		95D102C2214C6B8A0093177C /* APIClient */ = {
