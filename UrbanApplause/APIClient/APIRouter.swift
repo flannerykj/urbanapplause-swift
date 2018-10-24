@@ -10,96 +10,89 @@ import Foundation
 import Alamofire
 import Moya
 
+let apiProvider = MoyaProvider<APIRouter>()
+
 enum APIRouter {
     
     case login(email:String, password:String)
     case signup(email:String, password:String)
+    
     case getPosts
     case getPost(id: Int)
     case addPost(post: Post)
     case upload(images: [String])
     case getImage(imageName: String)
     
+    
 }
 
-extension APIRouter: URLRequestConvertible {
-    
-    // MARK: - HTTPMethod
-    private var method: HTTPMethod {
-        switch self {
-        case .login, .signup:
-            return .post
-        case .getPosts, .getPost, .getImage:
-            return .get
-        case .addPost:
-            return .post
-        case .upload:
-            return .post
-        }
+extension APIRouter: TargetType {
+    var baseURL: URL {
+        return URL(string: "http://localhost:8080/api")!
     }
     
-    // MARK: - Path
-    private var path: String {
+    var path: String {
         switch self {
         case .login:
             return "/login"
         case .signup:
             return "/register"
-        case .getPosts:
+        case .getPosts, .addPost:
             return "/posts"
         case .getPost(let id):
-            return "/posts/\(id)"
-        case .getImage(let imageName):
-            return "/posts/\(imageName)"
-        case .addPost:
-            return "/posts"
+            return "/posts\(id)"
         case .upload:
             return "/uploads"
+        case .getImage(let imageName):
+            return "/uploads/\(imageName)"
         }
     }
     
-    // MARK: - Parameters
-    private var parameters: Parameters? {
+    var method: Moya.Method {
+        switch self {
+        case .signup, .addPost, .upload:
+            return .post
+        default:
+            return .get
+        }
+    }
+    
+    var sampleData: Data {
+        return Data()
+    }
+    
+    var task: Task { // parameters
         switch self {
         case .login(let email, let password), .signup(let email, let password):
-            return [K.APIParameterKey.email: email, K.APIParameterKey.password: password]
-        case .getPosts, .getPost, .getImage:
-            return nil
+            return .requestParameters(parameters: ["email": email, "password": password], encoding: URLEncoding.queryString)
         case .addPost(let post):
-            return [
+            return .requestParameters(parameters: [
                 "description": post.description,
                 "artist_name": post.artist_name,
                 "artist_id": post.artist_id,
                 "username": post.username,
                 "user_id": post.user_id,
                 "image": post.image
-            ]
-        case .upload(let images):
-            return [K.APIParameterKey.images: images]
+            ], encoding: URLEncoding.queryString)
+        default:
+            return .requestPlain
         }
     }
     
-    // MARK: - URLRequestConvertible
-    func asURLRequest() throws -> URLRequest {
-        let url = try K.DevelopmentServer.baseURL.asURL()
-        
-        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-        
-        // HTTP Method
-        urlRequest.httpMethod = method.rawValue
-        
-        // Common Headers
-        urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
-        urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
-        
-        // Parameters
-        if let params = parameters {
-            do {
-                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
-            } catch {
-                // throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
-            }
+    var headers: [String : String]? {
+        return ["Content-type": "application/json"]
+    }
+}
+
+// MARK: - Response Handlers
+extension Moya.Response {
+    
+    func mapNSArray() throws -> NSArray {
+        print("handling response")
+        let any = try self.mapJSON()
+        guard let array = any as? NSArray else {
+            throw MoyaError.jsonMapping(self)
         }
-        return urlRequest
+        return array
     }
 }

@@ -18,10 +18,9 @@ class LoginViewController: UIViewController {
         // A simple request with no parameters
         if let password = passwordField.text {
             if let email = emailField.text {
-                APIClient.login(email: email, password: password) { data in
-                    print("success here")
-                    self.goToApp()
-                }
+                // TODO: APi call to login
+                self.goToApp()
+                
             }
         }
         

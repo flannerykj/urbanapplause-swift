@@ -48,7 +48,7 @@ extension PostTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
         let cellVM = viewModel.getCellViewModel(for: indexPath)
         
-        if let url: URL = URL(string: "\(APIClient.baseURL)/uploads/\(cellVM.imageName)") {
+        if let url: URL = URL(string: "http://localhost:8080/api/uploads/\(cellVM.imageName)") {
             cell.featuredImageView.load(url: url)
             cell.featuredImageView.contentMode = .scaleAspectFill
             cell.featuredImageView.clipsToBounds = true

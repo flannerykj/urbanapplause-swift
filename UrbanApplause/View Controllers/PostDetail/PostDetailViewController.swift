@@ -23,7 +23,7 @@ class PostDetailViewController: UIViewController {
 
         self.title = "Detail"
         if let post = selectedPost {
-            if let url: URL = URL(string: "\(APIClient.baseURL)/uploads/\(post.image)") {
+            if let url: URL = URL(string: "http://localhost:8080/api/uploads/\(post.image)") {
                 imageView.load(url: url)
                 imageView.contentMode = .scaleAspectFill
                 imageView.clipsToBounds = true

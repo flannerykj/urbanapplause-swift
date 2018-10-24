@@ -9,7 +9,7 @@
 import UIKit
 
 class PostTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var featuredImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
 
@@ -22,6 +22,8 @@ class PostTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
 }
 extension UIImageView {
     func load(url: URL) {

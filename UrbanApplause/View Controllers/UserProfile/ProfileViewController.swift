@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var usernameLabel: UILabel!
+    
     @IBAction func logoutButtonPressed(_ sender: Any) {
         APISession.endSession()
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
@@ -19,6 +21,7 @@ class ProfileViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameLabel?.text = "flannerykj"
 
         // Do any additional setup after loading the view.
     }

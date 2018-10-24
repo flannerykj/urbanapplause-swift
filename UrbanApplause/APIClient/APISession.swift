@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftKeychainWrapper
+import Moya
 
 struct AuthKeychain: Codable {
     var token: String
@@ -23,13 +24,6 @@ class APISession {
     private static var tokenExpiry: Date?
     static var user: User?
     
-    private static var sharedNetworkManager: APISession = {
-        return APISession()
-    }()
-    
-    static func shared() -> APISession {
-        return sharedNetworkManager
-    }
     
     static func setToken(token: String, expires: Date, user: User) {
         print(user)

@@ -30,9 +30,7 @@ class PostFormViewController: UIViewController {
             self.post.artist_name = self.artistField.text ?? "some artist"
             self.post.description = self.descriptionField.text ?? "some description"
             print(self.post)
-            APIClient.send(route: .addPost(post: self.post), success: onSuccess) { error in
-                print("psot failured")
-            }
+            
     
         } else {
             print("ERROR: user not set")

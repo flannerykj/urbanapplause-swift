@@ -18,19 +18,7 @@ class SignupViewController: UIViewController {
         // A simple request with no parameters
         if let password = passwordField.text {
             if let email = emailField.text {
-                APIClient.signup(email: email, password: password) { data in
-                    let decoder = JSONDecoder()
-                    do {
-                        let apiResponse = try decoder.decode(APIResponse<AuthContainer>.self, from: data)
-                        if let token = apiResponse.data?.token {
-                            print("TOKEN: \(token)")
-                        } else {
-                            print(apiResponse)
-                        }
-                    } catch {
-                        print("unable to decode response")
-                    }
-                }
+                
             }
         }
         

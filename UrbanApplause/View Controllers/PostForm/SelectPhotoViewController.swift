@@ -40,9 +40,7 @@ class SelectPhotoViewController: UIViewController, UIImagePickerControllerDelega
             self.selectedImage = image_data
             let imageData:Data = UIImagePNGRepresentation(image_data)!
             let imageStr = imageData.base64EncodedString()
-            APIClient.send(route: .upload(images: [imageStr]), success: onSuccess) { error in
-                print("error")
-            }
+            
         }
         
     }

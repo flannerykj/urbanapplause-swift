@@ -17,7 +17,7 @@ class ImageViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
-        if let image = imageName, let url: URL = URL(string: "\(APIClient.baseURL)/uploads/\(image)") {
+        if let image = imageName, let url: URL = URL(string: "http://localhost:8080/api/uploads/\(image)") {
             imageView.load(url: url)
             imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true

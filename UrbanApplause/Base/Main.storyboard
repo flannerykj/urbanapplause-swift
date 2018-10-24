@@ -467,28 +467,96 @@
         <!--Profile-->
         <scene sceneID="Xyz-gY-P4R">
             <objects>
-                <viewController title="Profile" id="Szb-RO-SUp" customClass="ProfileViewController" customModule="UrbanApplause" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileView" title="Profile" id="Szb-RO-SUp" customClass="ProfileViewController" customModule="UrbanApplause" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iYx-Fw-4D4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdO-AN-c2J">
-                                <rect key="frame" x="163" y="318" width="48" height="30"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F1U-oz-5yi">
+                                <rect key="frame" x="-20" y="44" width="415" height="594"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="logoutButtonPressed:" destination="Szb-RO-SUp" eventType="touchUpInside" id="62X-fn-qDi"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Sui-qS-KdO">
+                                        <rect key="frame" x="160" y="1" width="78" height="82"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcU-Ro-H51">
+                                        <rect key="frame" x="186" y="91" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lap-xa-mfc">
+                                        <rect key="frame" x="179" y="133" width="57" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Settings"/>
+                                        <connections>
+                                            <segue destination="FJv-at-QXa" kind="show" id="lpJ-5o-jWu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3N-1i-8pH">
+                                        <rect key="frame" x="168" y="162" width="78" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Log Out"/>
+                                        <connections>
+                                            <action selector="logoutButtonPressed:" destination="Szb-RO-SUp" eventType="touchUpInside" id="gyF-2h-LcE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="q7r-ZT-ZAQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="esH-MX-JZz"/>
+                    <connections>
+                        <outlet property="usernameLabel" destination="YcU-Ro-H51" id="0Oe-nq-euP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PgX-Me-mVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2519.1999999999998" y="2566.866566716642"/>
+        </scene>
+        <!--Settings Table View Controller-->
+        <scene sceneID="ljE-73-ntZ">
+            <objects>
+                <tableViewController id="FJv-at-QXa" customClass="SettingsTableViewController" customModule="UrbanApplause" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cPc-aP-gl9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" textLabel="vUb-yy-wYE" style="IBUITableViewCellStyleDefault" id="6zR-yy-5eF" customClass="SettingsTableViewCell" customModule="UrbanApplause" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6zR-yy-5eF" id="QdV-iS-jnV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vUb-yy-wYE">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="vUb-yy-wYE" id="Mpa-rD-N0E"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FJv-at-QXa" id="hcC-fo-baw"/>
+                            <outlet property="delegate" destination="FJv-at-QXa" id="cJK-Ht-aSn"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wXW-Ag-cgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3282" y="2567"/>
         </scene>
         <!--Posts-->
         <scene sceneID="DeA-Mv-X2d">
@@ -570,6 +638,7 @@
     </scenes>
     <resources>
         <image name="placeholder_image" width="1280" height="960"/>
+        <image name="profile-placeholder" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZgZ-j4-thc"/>
