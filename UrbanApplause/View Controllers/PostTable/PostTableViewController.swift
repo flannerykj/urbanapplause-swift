@@ -45,15 +45,9 @@ extension PostTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as! PostTableViewCell
         let cellVM = viewModel.getCellViewModel(for: indexPath)
-        
-        if let url: URL = URL(string: "http://localhost:8080/api/uploads/\(cellVM.imageName)") {
-            cell.featuredImageView.load(url: url)
-            cell.featuredImageView.contentMode = .scaleAspectFill
-            cell.featuredImageView.clipsToBounds = true
-        }
-        cell.titleLabel.text = cellVM.titleText
+        cell.configure(with: cellVM)
         return cell
     }
     

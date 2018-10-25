@@ -9,6 +9,8 @@
 import Foundation
 
 struct K {
+    static let baseURL = "http://localhost:8080/api"
+    
     struct DevelopmentServer {
         static let baseURL = "http://localhost:8080/api"
     }

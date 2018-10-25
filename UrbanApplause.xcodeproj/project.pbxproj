@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0E4F86B29246A5ECFA9713F7 /* Pods_UrbanApplause.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68BAC5981306F8C22D9AAC8 /* Pods_UrbanApplause.framework */; };
 		69778D31B4B4F414802083CC /* Pods_UrbanApplauseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77C9E60E57592BD2EA59A4B /* Pods_UrbanApplauseTests.framework */; };
+		9505C8912182800E0015E045 /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9505C8902182800E0015E045 /* PostCellViewModel.swift */; };
+		9505C893218280520015E045 /* PostRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9505C892218280520015E045 /* PostRepresentable.swift */; };
+		9505C8952182817A0015E045 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9505C8942182817A0015E045 /* Image.swift */; };
+		9505C897218282C70015E045 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9505C896218282C70015E045 /* Date.swift */; };
 		9537B9EE2151E45B00CD92EE /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537B9ED2151E45B00CD92EE /* APISession.swift */; };
 		9559AF3A2150924C0043302F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9559AF392150924C0043302F /* ProfileViewController.swift */; };
 		9559AF3C215095020043302F /* SelectPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9559AF3B215095020043302F /* SelectPhotoViewController.swift */; };
@@ -64,6 +68,10 @@
 		0C605DAA8AE60B41341E7D46 /* Pods-UrbanApplauseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UrbanApplauseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UrbanApplauseTests/Pods-UrbanApplauseTests.release.xcconfig"; sourceTree = "<group>"; };
 		50A26EC127C1299E12918200 /* Pods-UrbanApplauseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UrbanApplauseUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UrbanApplauseUITests/Pods-UrbanApplauseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCA52A0BD280FB13AACFCA2 /* Pods-UrbanApplause.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UrbanApplause.release.xcconfig"; path = "Pods/Target Support Files/Pods-UrbanApplause/Pods-UrbanApplause.release.xcconfig"; sourceTree = "<group>"; };
+		9505C8902182800E0015E045 /* PostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModel.swift; sourceTree = "<group>"; };
+		9505C892218280520015E045 /* PostRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepresentable.swift; sourceTree = "<group>"; };
+		9505C8942182817A0015E045 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		9505C896218282C70015E045 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		9537B9ED2151E45B00CD92EE /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
 		9559AF392150924C0043302F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9559AF3B215095020043302F /* SelectPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +158,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9505C88D21827F7A0015E045 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				9594C39E216C416B00045F32 /* PostTableViewModel.swift */,
+				9505C8902182800E0015E045 /* PostCellViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		9505C88E21827F890015E045 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9505C892218280520015E045 /* PostRepresentable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9505C88F21827F900015E045 /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				95AA4BB421056717008962F5 /* PostTableViewCell.swift */,
+			);
+			path = "Table Cells";
+			sourceTree = "<group>";
+		};
 		958D66B6217F6E4400C96E3A /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				958D66BA217F73F400C96E3A /* UserDefaults.swift */,
+				9505C8942182817A0015E045 /* Image.swift */,
+				9505C896218282C70015E045 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -215,8 +250,9 @@
 			isa = PBXGroup;
 			children = (
 				95AA4BAE2105600E008962F5 /* PostTableViewController.swift */,
-				9594C39E216C416B00045F32 /* PostTableViewModel.swift */,
-				95AA4BB421056717008962F5 /* PostTableViewCell.swift */,
+				9505C88E21827F890015E045 /* Protocols */,
+				9505C88D21827F7A0015E045 /* View Models */,
+				9505C88F21827F900015E045 /* Table Cells */,
 			);
 			path = PostTable;
 			sourceTree = "<group>";
@@ -577,9 +613,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				955EC597210D410500B21207 /* PostFormViewController.swift in Sources */,
+				9505C897218282C70015E045 /* Date.swift in Sources */,
 				95ADD5C1215FC84400611919 /* Place.swift in Sources */,
 				955EC59B210DFED300B21207 /* SignupViewController.swift in Sources */,
 				95D102C6214C6BB00093177C /* APIRouter.swift in Sources */,
+				9505C8952182817A0015E045 /* Image.swift in Sources */,
+				9505C893218280520015E045 /* PostRepresentable.swift in Sources */,
 				9594C39F216C416B00045F32 /* PostTableViewModel.swift in Sources */,
 				958D66BB217F73F400C96E3A /* UserDefaults.swift in Sources */,
 				95D25F7A214F237F00DD18AA /* LoginViewController.swift in Sources */,
@@ -590,6 +629,7 @@
 				958D66CB217F9E1600C96E3A /* SettingsTableViewCell.swift in Sources */,
 				95ADD5C3215FC86200611919 /* User.swift in Sources */,
 				958D66D0217FA21000C96E3A /* SettingsTableViewController.swift in Sources */,
+				9505C8912182800E0015E045 /* PostCellViewModel.swift in Sources */,
 				9559AF3C215095020043302F /* SelectPhotoViewController.swift in Sources */,
 				95F2B9A4210BD81300B9D5B9 /* PostDetailViewController.swift in Sources */,
 				955EC595210CC8D800B21207 /* ImageViewController.swift in Sources */,

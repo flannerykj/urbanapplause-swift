@@ -62,9 +62,7 @@ class PostTableViewModel {
     }
     
     func createCellViewModel(post: Post) -> PostCellViewModel {
-        let dateText = ""
-        
-        let cellVM = PostCellViewModel(titleText: post.artist_name, dateText: dateText, imageName: post.image)
+        let cellVM = PostCellViewModel(post: post)
         return cellVM
     }
     
@@ -79,10 +77,4 @@ class PostTableViewModel {
         selectedPost = posts[indexPath.row]
     }
     
-}
-
-struct PostCellViewModel {
-    var titleText: String
-    var dateText: String
-    var imageName: String
 }
