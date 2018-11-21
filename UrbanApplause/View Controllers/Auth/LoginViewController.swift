@@ -8,16 +8,39 @@
 
 import UIKit
 import Alamofire
+import PureLayout
 
 class LoginViewController: UIViewController {
+    var mainView: AppView!
+    var authForm: AuthFormView!
     
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
-    @IBAction func submit(_ sender: UIButton) {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mainView = AppView(frame: CGRect.zero)
         
+        
+        authForm = AuthFormView(frame: CGRect.zero)
+        authForm.submitButton.addTarget(self, action: #selector(submit), for: UIControlEvents.allTouchEvents)
+        mainView.addContentSubview(authForm)
+        self.view.addSubview(mainView)
+        mainView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets.zero)
+        
+        
+        authForm.emailField.text = "flannj@gmail.com"
+        authForm.passwordField.text = "cheesecake"
+        // Do any additional setup after loading the view.
+        APISession.getTokenFromKeychain()
+        if APISession.isAuthenticated() {
+            self.goToApp()
+        }
+    }
+    
+    @objc func submit(_ sender: UIButton) {
+        print("try to submit")
         // A simple request with no parameters
-        if let password = passwordField.text {
-            if let email = emailField.text {
+        if let password = authForm.passwordField.text {
+            if let email = authForm.emailField.text {
                 // TODO: APi call to login
                 self.goToApp()
                 
@@ -25,25 +48,14 @@ class LoginViewController: UIViewController {
         }
         
     }
+    
     func goToApp() {
         print("going to app")
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
-        
-        let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "TabBar")
-        appDelegate.window?.rootViewController = initialViewController
+        appDelegate.window?.rootViewController = Navigation.tabBarController
         appDelegate.window?.makeKeyAndVisible()
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        emailField.text = "flannj@gmail.com"
-        passwordField.text = "cheesecake"
-        // Do any additional setup after loading the view.
-        APISession.getTokenFromKeychain()
-        if APISession.isAuthenticated() {
-            self.goToApp()
-        }
-    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

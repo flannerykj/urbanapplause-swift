@@ -10,6 +10,7 @@ target 'UrbanApplause' do
   pod 'SwiftKeychainWrapper', '~> 3.0'
   pod 'Moya', '~> 11.0'
   pod 'Font-Awesome-Swift', '~> 1.7.2'
+  pod 'PureLayout'
 
   target 'UrbanApplauseTests' do
     inherit! :search_paths

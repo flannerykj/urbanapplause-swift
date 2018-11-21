@@ -7,21 +7,14 @@
 //
 
 import UIKit
+import PureLayout
 
 class PostTableViewCell: UITableViewCell {
     
     static let identifier = "PostCell"
     
     // MARK: UI Properties
-    @IBOutlet weak var featuredImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
-    
-    
-    // Table Cell methods
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    var card = PostCardView()
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -29,8 +22,11 @@ class PostTableViewCell: UITableViewCell {
     
     
     func configure(with viewModel: PostCellViewModel) {
-        featuredImageView.load(url: viewModel.imageUrl)
-        titleLabel.text = viewModel.titleText
-        subtitleLabel.text = viewModel.subtitleText
+        self.card.featuredImageView.load(url: viewModel.imageUrl)
+        self.card.titleLabel.text = viewModel.titleText
+        self.card.subtitleLabel.text = viewModel.subtitleText
+        contentView.addSubview(card)
+        card.autoPinEdgesToSuperviewEdges()
+        
     }
 }

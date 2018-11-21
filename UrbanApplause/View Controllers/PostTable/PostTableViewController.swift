@@ -8,12 +8,21 @@
 
 import UIKit
 
-class PostTableViewController: UITableViewController {
+class PostTableViewController: UIViewController  {
     
     let viewModel = PostTableViewModel()
+    var tableView: UITableView!
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        tableView.rowHeight = 200
+        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
+        tableView.dataSource = self
+        tableView.delegate = self
+        self.view.addSubview(tableView)
+        
         initVM()
     }
     
@@ -32,26 +41,26 @@ class PostTableViewController: UITableViewController {
     }
 }
 
-extension PostTableViewController {
+extension PostTableViewController: UITableViewDelegate, UITableViewDataSource {
 
     // MARK: - TABLEVIEW METHODS
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.getNumberRows()
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as! PostTableViewCell
         let cellVM = viewModel.getCellViewModel(for: indexPath)
         cell.configure(with: cellVM)
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         viewModel.userPressed(indexPath: indexPath)
         return indexPath
     }

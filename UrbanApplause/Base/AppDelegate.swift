@@ -9,12 +9,22 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+    class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         APISession.getTokenFromKeychain()
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        // let authNav = AuthNavigationController.shared
+        // let loginVC = LoginViewController()
+        let tabNav = TabBarController.shared
+        // let homeVC = PostTableViewController()
+        // authNav.pushViewController(homeVC, animated: true)
+        window!.rootViewController = tabNav
+        window!.makeKeyAndVisible()
        return true
     }
 
